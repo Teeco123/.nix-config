@@ -40,14 +40,14 @@ yabai -m rule --add app="^Safari$" space=^1
 yabai -m rule --add app="^WezTerm$" space=^2
 yabai -m rule --add app="^wezterm-gui$" space=^2
 yabai -m rule --add app="^Messages$" space=^3
-yabai -m rule --add app!="^(Safari|WezTerm|Messages)$" space=^4
+yabai -m rule --add app="^(?!Safari$|WezTerm$|Messages$).*" space=^4
 
 yabai -m space 1 --label browser
 yabai -m space 2 --label terminal
 yabai -m space 3 --label imessage
 yabai -m space 4 --label other
 
-yabai -m space 4 --layout bsp
+yabai -m space 4 --layout float
 
 yabai -m signal --add event=space_changed action="~/.config/yabai/plugins/space-change-action.sh"
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"

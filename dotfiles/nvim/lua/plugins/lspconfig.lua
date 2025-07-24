@@ -7,7 +7,10 @@ return {
 			require("lspconfig").lua_ls.setup({})
 			require("lspconfig").clangd.setup({
 				filetypes = { "c", "cpp" },
-				cmd = { "clangd", "--clang-tidy" },
+				cmd = {
+					"clangd",
+					"--clang-tidy",
+				},
 			})
 			require("lspconfig").svelte.setup({})
 			require("lspconfig").ts_ls.setup({})
