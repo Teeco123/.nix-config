@@ -54,6 +54,20 @@
             }
           ];
         };
+        server = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hosts/server/configuration.nix
+            home-manager.nixosModules.home-manager
+            nur.modules.nixos.default
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = { inherit inputs; };
+              home-manager.users.server = ./hosts/server/home.nix;
+            }
+          ];
+        };
       };
     };
 }
