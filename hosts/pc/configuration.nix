@@ -9,6 +9,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./services/tailscale.nix
   ];
 
   nix = {
