@@ -12,6 +12,16 @@
     ./services/cloudflared.nix
     ./services/immich.nix
     ./services/qbittorrent.nix
+    ./services/arr/prowlarr.nix
+    ./services/arr/flaresolverr.nix
+    ./services/arr/sonarr.nix
+    ./services/arr/radarr.nix
+    ./services/arr/jellyseerr.nix
+    ./services/jellyfin.nix
+    ./services/vaultwarden.nix
+    ./services/tailscale.nix
+    ./services/caddy.nix
+    ./services/dyndns.nix
   ];
 
   nix = {
@@ -74,6 +84,16 @@
     networkmanager = {
       enable = true;
     };
+    firewall = {
+      allowedTCPPorts = [
+        34629
+        64034
+        45650
+        80
+        443
+      ];
+      allowedUDPPorts = [ 45650 ];
+    };
   };
 
   environment = {
@@ -84,13 +104,18 @@
 
   i18n.defaultLocale = "en_US.UTF-8";
 
-  users.users = {
-    server = {
-      isNormalUser = true;
-      shell = pkgs.zsh;
-      extraGroups = [
-        "wheel"
-      ];
+  users = {
+    groups = {
+      media = { };
+    };
+    users = {
+      server = {
+        isNormalUser = true;
+        shell = pkgs.zsh;
+        extraGroups = [
+          "wheel"
+        ];
+      };
     };
   };
 
