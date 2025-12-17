@@ -3,6 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nix-darwin = {
+      url = "github:nix-darwin/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -30,6 +34,7 @@
 
   outputs =
     {
+      nix-darwin,
       nixpkgs,
       nur,
       home-manager,
@@ -68,6 +73,18 @@
             }
           ];
         };
+      };
+      darwinConfigurations."Kacpers-MacBook-Pro" = nix-darwin.lib.darwinSystem {
+        modules = [
+          ./hosts/macbook/configuration.nix
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.users.kacper = ./hosts/macbook/home.nix;
+          }
+        ];
       };
     };
 }

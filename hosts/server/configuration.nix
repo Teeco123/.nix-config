@@ -7,23 +7,24 @@
   imports = [
     ./hardware-configuration.nix
 
-    ./services/cloudflared.nix
-    ./services/immich.nix
-    ./services/qbittorrent.nix
-    ./services/arr/prowlarr.nix
-    ./services/arr/flaresolverr.nix
-    ./services/arr/sonarr.nix
-    ./services/arr/radarr.nix
-    ./services/arr/jellyseerr.nix
-    ./services/arr/bazarr.nix
-    ./services/jellyfin.nix
-    ./services/vaultwarden.nix
-    ./services/tailscale.nix
-    ./services/headscale.nix
-    ./services/caddy.nix
-    ./services/dyndns.nix
-    ./services/pihole.nix
-    ./services/borgbackup.nix
+    ../../modules/server/nix/cloudflared.nix
+    ../../modules/server/nix/caddy.nix
+    ../../modules/server/nix/dyndns.nix
+    ../../modules/server/nix/immich.nix
+    ../../modules/server/nix/pihole.nix
+    ../../modules/server/nix/jellyfin.nix
+    ../../modules/server/nix/headscale.nix
+    ../../modules/server/nix/tailscale.nix
+    ../../modules/server/nix/borgbackup.nix
+    ../../modules/server/nix/qbittorrent.nix
+    ../../modules/server/nix/vaultwarden.nix
+
+    ../../modules/server/nix/arr/bazarr.nix
+    ../../modules/server/nix/arr/radarr.nix
+    ../../modules/server/nix/arr/sonarr.nix
+    ../../modules/server/nix/arr/prowlarr.nix
+    ../../modules/server/nix/arr/jellyseerr.nix
+    ../../modules/server/nix/arr/flaresolverr.nix
   ];
 
   services.thermald.enable = true;

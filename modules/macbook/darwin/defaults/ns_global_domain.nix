@@ -1,0 +1,39 @@
+{ ... }:
+{
+  system.defaults.NSGlobalDomain = {
+    "com.apple.keyboard.fnState" = false;
+    "com.apple.mouse.tapBehavior" = 1;
+    "com.apple.sound.beep.feedback" = 1;
+    "com.apple.sound.beep.volume" = 1.000;
+    "com.apple.swipescrolldirection" = true;
+    "com.apple.trackpad.enableSecondaryClick" = true;
+    "com.apple.trackpad.scaling" = 0.8;
+    _HIHideMenuBar = true;
+    AppleIconAppearanceTheme = "ClearAutomatic";
+    AppleICUForce24HourTime = false;
+    AppleInterfaceStyleSwitchesAutomatically = true;
+    AppleKeyboardUIMode = 2;
+    AppleMeasurementUnits = "Centimeters";
+    AppleMetricUnits = 1;
+    ApplePressAndHoldEnabled = false;
+    AppleScrollerPagingBehavior = true;
+    AppleShowAllExtensions = true;
+    AppleShowAllFiles = true;
+    AppleShowScrollBars = "Always";
+    AppleTemperatureUnit = "Celsius";
+    InitialKeyRepeat = 14;
+    KeyRepeat = 3;
+    NSAutomaticCapitalizationEnabled = false;
+    NSAutomaticDashSubstitutionEnabled = false;
+    NSAutomaticInlinePredictionEnabled = false;
+    NSAutomaticPeriodSubstitutionEnabled = false;
+    NSAutomaticQuoteSubstitutionEnabled = false;
+    NSAutomaticSpellingCorrectionEnabled = false;
+    NSAutomaticWindowAnimationsEnabled = true;
+    NSDisableAutomaticTermination = false;
+    NSDocumentSaveNewDocumentsToCloud = false;
+    NSTableViewDefaultSizeMode = 2;
+    NSWindowResizeTime = 0.05;
+    NSWindowShouldDragOnGesture = true;
+  };
+}

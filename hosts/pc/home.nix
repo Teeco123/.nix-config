@@ -9,12 +9,6 @@
     inputs.xremap-flake.homeManagerModules.default
     inputs.nixvim.homeModules.nixvim
     inputs.catppuccin.homeModules.catppuccin
-    ../../modules/pc/obs.nix
-    ../../modules/pc/wofi.nix
-    ../../modules/pc/waybar.nix
-    ../../modules/pc/firefox.nix
-    ../../modules/pc/hyprland.nix
-    ../../modules/pc/desktop-entries.nix
 
     ../../modules/shared/nvim/nvim.nix
     ../../modules/shared/eza.nix

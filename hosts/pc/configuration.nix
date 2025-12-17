@@ -9,7 +9,15 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./services/tailscale.nix
+
+    ../../modules/pc/nix/obs.nix
+    ../../modules/pc/nix/wofi.nix
+    ../../modules/pc/nix/waybar.nix
+    ../../modules/pc/nix/firefox.nix
+    ../../modules/pc/nix/hyprland.nix
+    ../../modules/pc/nix/desktop-entries.nix
+    ../../modules/pc/nix/tailscale.nix
+
   ];
 
   fileSystems."/mnt/obs" = {
