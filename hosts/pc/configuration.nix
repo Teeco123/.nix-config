@@ -12,6 +12,18 @@
     ./services/tailscale.nix
   ];
 
+  fileSystems."/mnt/obs" = {
+    device = "/dev/disk/by-uuid/6F65-D0BB";
+    fsType = "exfat";
+    options = [
+      "uid=1000"
+      "gid=100"
+      "dmask=007"
+      "fmask=117"
+      "nofail"
+    ];
+  };
+
   nix = {
     settings = {
       download-buffer-size = 524288000;
