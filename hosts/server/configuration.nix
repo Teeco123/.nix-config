@@ -1,6 +1,4 @@
 {
-  config,
-  lib,
   pkgs,
   ...
 }:
@@ -17,12 +15,26 @@
     ./services/arr/sonarr.nix
     ./services/arr/radarr.nix
     ./services/arr/jellyseerr.nix
+    ./services/arr/bazarr.nix
     ./services/jellyfin.nix
     ./services/vaultwarden.nix
     ./services/tailscale.nix
+    ./services/headscale.nix
     ./services/caddy.nix
     ./services/dyndns.nix
+    ./services/pihole.nix
+    ./services/borgbackup.nix
   ];
+
+  services.thermald.enable = true;
+
+  powerManagement = {
+    enable = true;
+    cpuFreqGovernor = "powersave";
+    powertop = {
+      enable = true;
+    };
+  };
 
   nix = {
     settings = {
@@ -55,26 +67,16 @@
         canTouchEfiVariables = true;
       };
     };
-    initrd = {
-      systemd = {
-        enable = true;
-      };
-      services = {
-        swraid = {
-          enable = true;
-          mdadmConf = ''
-            ARRAY /dev/md0 level=raid1 num-devices=2 metadata=1.2 UUID=fbe7880d:944cae72:8f4f67db:c8ed6be8
-               devices=/dev/sdb,/dev/sdc
-          '';
-        };
-      };
-    };
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
   fileSystems = {
     "/mnt/md0" = {
-      device = "/dev/disk/by-uuid/ef63c214-c45f-4239-9559-9ce3bd6b6d72";
+      device = "/dev/disk/by-uuid/bec2aa45-2f37-4d48-8910-1092ccc0f790";
+      fsType = "ext4";
+    };
+    "/mnt/backup" = {
+      device = "/dev/disk/by-uuid/47349bdf-a2b2-4612-a3b7-831144098ade";
       fsType = "ext4";
     };
   };

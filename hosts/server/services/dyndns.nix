@@ -5,8 +5,7 @@
     ipv4 = true;
     deleteMissing = true;
     domains = [
-      "headscale.teeco.cc"
-      "qbittorrent.teeco.cc"
+      "*.teeco.cc"
     ];
     apiTokenFile = "/home/server/.cloudflared/api_token";
   };
