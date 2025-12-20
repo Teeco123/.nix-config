@@ -10,6 +10,7 @@
   imports = [
     ../../modules/macbook/darwin/tailscale.nix
     ../../modules/macbook/darwin/aerospace.nix
+    ../../modules/macbook/darwin/jankyborders.nix
 
     ../../modules/macbook/darwin/defaults/dock.nix
     ../../modules/macbook/darwin/defaults/finder.nix

@@ -4,10 +4,10 @@
     enable = true;
     settings = {
       gaps = {
-        outer.left = 0;
-        outer.bottom = 0;
-        outer.top = 0;
-        outer.right = 0;
+        outer.left = 14;
+        outer.bottom = 14;
+        outer.top = 14;
+        outer.right = 14;
       };
       on-window-detected = [
         {
