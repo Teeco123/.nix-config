@@ -26,6 +26,7 @@
             "100.64.0.1 sonarr.teeco.cc"
             "100.64.0.1 radarr.teeco.cc"
             "100.64.0.1 bazarr.teeco.cc"
+            "100.64.0.1 mealie.teeco.cc"
           ];
           listeningMode = "ALL";
         };

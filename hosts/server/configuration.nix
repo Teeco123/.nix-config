@@ -7,6 +7,8 @@
   imports = [
     ./hardware-configuration.nix
 
+    ../../modules/server/nix/home-assistant
+
     ../../modules/server/nix/cloudflared.nix
     ../../modules/server/nix/caddy.nix
     ../../modules/server/nix/dyndns.nix
@@ -18,6 +20,8 @@
     ../../modules/server/nix/borgbackup.nix
     ../../modules/server/nix/qbittorrent.nix
     ../../modules/server/nix/vaultwarden.nix
+    ../../modules/server/nix/mealie.nix
+    ../../modules/server/nix/uptime-kuma.nix
 
     ../../modules/server/nix/arr/bazarr.nix
     ../../modules/server/nix/arr/radarr.nix
@@ -94,8 +98,12 @@
         45650
         80
         443
+        25565
       ];
-      allowedUDPPorts = [ 45650 ];
+      allowedUDPPorts = [
+        25565
+        45650
+      ];
     };
   };
 

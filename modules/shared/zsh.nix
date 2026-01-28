@@ -4,6 +4,10 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
+    
+    sessionVariables = {
+      EDITOR = "nvim";
+    };    
 
     shellAliases = {
       ls = "eza -a";

@@ -27,6 +27,7 @@
       unzip
       wget
       bottom
+      javaPackages.compiler.temurin-bin.jre-25
     ];
   };
 

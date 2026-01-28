@@ -2,12 +2,17 @@
 {
   services.borgbackup = {
     jobs = {
-      "immich-data" = {
-        paths = "/mnt/md0/immich";
-        repo = "/mnt/backup/immich-data";
+      "local" = {
+        paths = [ "/mnt/md0/immich" ];
+        repo = "/mnt/backup/repo";
+        compression = "auto,lz4";
         encryption.mode = "none";
         startAt = "daily";
-        compression = "lz4";
+        prune.keep = {
+          daily = 7;
+          weekly = 4;
+          monthly = 6;
+        };
       };
     };
   };
