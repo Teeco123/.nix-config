@@ -10,6 +10,12 @@
     inputs.nixvim.homeModules.nixvim
     inputs.catppuccin.homeModules.catppuccin
 
+    ../../modules/pc/home/firefox.nix
+    ../../modules/pc/home/waybar.nix
+    ../../modules/pc/home/wofi.nix
+    ../../modules/pc/home/hyprland.nix
+    ../../modules/pc/home/desktop-entries.nix
+
     ../../modules/shared/nvim/nvim.nix
     ../../modules/shared/eza.nix
     ../../modules/shared/git.nix
@@ -37,6 +43,9 @@
       xhost
       freerdp
       bottom
+      libreoffice-qt
+      hunspell
+      hunspellDicts.pl_PL
     ];
   };
 
@@ -47,6 +56,7 @@
         preload = [ "/home/kacper/.nix-config/wallpapers/whitegray" ];
         wallpaper = [
           "DP-1, /home/kacper/.nix-config/wallpapers/whitegray"
+          "HDMI-A-1, /home/kacper/.nix-config/wallpapers/whitegray"
         ];
       };
     };

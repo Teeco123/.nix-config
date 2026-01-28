@@ -7,6 +7,15 @@
       enable = true;
       variables = [ "--all" ];
     };
+    submaps = {
+      no-bind = {
+        settings = {
+          bind = [
+            "SUPER_R, Delete, submap, reset"
+          ];
+        };
+      };
+    };
     settings = {
       "$mainMod" = "Super_L";
       "$menu" = "pgrep wofi >/dev/null 2>&1 && pkill wofi || wofi --show drun";
@@ -96,7 +105,9 @@
       ];
 
       workspace = [
-        "3, gapsin:0, gapsout:0, border:false, rounding:false"
+        "1, monitor:DP-1"
+        "2, monitor:DP-1"
+        "3, monitor:DP-1, gapsin:0, gapsout:0, border:false, rounding:false"
       ];
 
       windowrule = [
@@ -107,7 +118,10 @@
       ];
 
       bind = [
+        "SUPER_R, Delete, submap, no-bind"
+        "$mainMod SHIFT, 1, movetoworkspace, 1"
         "$mainMod SHIFT, 2, movetoworkspace, 2"
+        "$mainMod SHIFT, 3, movetoworkspace, 3"
         "$mainMod, F, fullscreen"
         "$mainMod, Tab, cyclenext"
         "$mainMod, 1, workspace, 1"
