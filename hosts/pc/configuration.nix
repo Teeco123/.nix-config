@@ -12,6 +12,7 @@
 
     ../../modules/pc/nix/obs.nix
     ../../modules/pc/nix/tailscale.nix
+    ../../modules/pc/nix/sunshine.nix
   ];
 
   fileSystems."/mnt/obs" = {
@@ -73,15 +74,6 @@
   };
 
   services = {
-    sunshine = {
-      enable = true;
-      package = pkgs.sunshine.override {
-        cudaSupport = true;
-      };
-      capSysAdmin = true;
-      autoStart = true;
-      openFirewall = true;
-    };
     greetd = {
       enable = true;
       settings = rec {
