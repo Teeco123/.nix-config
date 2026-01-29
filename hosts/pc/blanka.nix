@@ -8,25 +8,24 @@
   imports = [
     inputs.xremap-flake.homeManagerModules.default
     inputs.nixvim.homeModules.nixvim
-    inputs.catppuccin.homeModules.catppuccin
 
-    ../../modules/pc/home/firefox.nix
-    ../../modules/pc/home/waybar.nix
-    ../../modules/pc/home/wofi.nix
-    ../../modules/pc/home/hyprland.nix
-    ../../modules/pc/home/desktop-entries.nix
+    ../../modules/pc/home/kacper/firefox.nix
+    ../../modules/pc/home/kacper/waybar.nix
+    ../../modules/pc/home/kacper/wofi.nix
+    ../../modules/pc/home/kacper/hyprland.nix
+    ../../modules/pc/home/kacper/desktop-entries.nix
 
-    ../../modules/shared/nvim/nvim.nix
-    ../../modules/shared/eza.nix
-    ../../modules/shared/git.nix
-    ../../modules/shared/zsh.nix
-    ../../modules/shared/yazi.nix
-    ../../modules/shared/wezterm.nix
+    ../../modules/shared/kacper/nvim/nvim.nix
+    ../../modules/shared/kacper/eza.nix
+    ../../modules/shared/kacper/git.nix
+    ../../modules/shared/kacper/zsh.nix
+    ../../modules/shared/kacper/yazi.nix
+    ../../modules/shared/kacper/wezterm.nix
   ];
 
   home = {
-    username = "kacper";
-    homeDirectory = "/home/kacper";
+    username = "blanka";
+    homeDirectory = "/home/blanka";
     stateVersion = "25.05";
     packages = with pkgs; [
       wl-clipboard

@@ -23,10 +23,6 @@
       url = "github:xremap/nix-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    catppuccin = {
-      url = "github:catppuccin/nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     polymc = {
       url = "github:PolyMC/PolyMC";
     };
@@ -55,7 +51,8 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = { inherit inputs; };
-              home-manager.users.kacper = ./hosts/pc/home.nix;
+              home-manager.users.kacper = ./hosts/pc/kacper.nix;
+              home-manager.users.blanka = ./hosts/pc/blanka.nix;
             }
           ];
         };

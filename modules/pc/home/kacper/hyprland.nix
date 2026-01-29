@@ -20,8 +20,17 @@
       "$mainMod" = "Super_L";
       "$menu" = "pgrep wofi >/dev/null 2>&1 && pkill wofi || wofi --show drun";
 
-      monitor = [
-        "DP-1,3440x1440@160,0x0,1"
+      monitorv2 = [
+        {
+          output = "DP-1";
+          mode = "3440x1440@160";
+          position = "0x0";
+          scale = 1;
+          bitdepth = 10;
+          cm = "hdr";
+          sdrbrightness = 1.2;
+          sdrsaturation = 0.98;
+        }
       ];
 
       exec-once = [
@@ -98,10 +107,10 @@
       };
 
       layerrule = [
-        "blur, wofi"
-        "blur, firefox"
-        "blur, wezterm"
-        "ignorealpha 0, wofi"
+        "blur on, match:namespace wofi"
+        "ignore_alpha 0, match:namespace wofi"
+        "blur on, match:namespace firefox"
+        "blur on, match:namespace wezterm"
       ];
 
       workspace = [
@@ -111,10 +120,10 @@
       ];
 
       windowrule = [
-        "float, title:Picture-in-Picture"
-        "size 763 429, title:Picture-in-Picture"
-        "pin, title:Picture-in-Picture"
-        "keepaspectratio, title:Picture-in-Picture"
+        "float on, match:title Picture-in-Picture"
+        "size 763 429, match:title Picture-in-Picture"
+        "pin on, match:title Picture-in-Picture"
+        "keep_aspect_ratio on, match:title Picture-in-Picture"
       ];
 
       bind = [

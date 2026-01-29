@@ -86,7 +86,7 @@
       enable = true;
       settings = rec {
         initial_session = {
-          command = "hyprland";
+          command = "start-hyprland";
           user = "kacper";
         };
         default_session = initial_session;
