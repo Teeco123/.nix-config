@@ -13,6 +13,7 @@
     ../../modules/pc/nix/obs.nix
     ../../modules/pc/nix/tailscale.nix
     ../../modules/pc/nix/sunshine.nix
+    ../../modules/pc/nix/pipewire.nix
   ];
 
   fileSystems."/mnt/obs" = {
@@ -93,18 +94,6 @@
         PermitRootLogin = "yes";
       };
     };
-    pipewire = {
-      enable = true;
-      audio.enable = true;
-      alsa = {
-        enable = true;
-        support32Bit = true;
-      };
-      pulse.enable = true;
-      jack.enable = true;
-      wireplumber.enable = true;
-    };
-
   };
 
   networking = {
