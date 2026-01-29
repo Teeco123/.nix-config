@@ -13,9 +13,6 @@
           "jellyseerr.teeco.cc" = {
             service = "http://localhost:${toString config.services.jellyseerr.port}";
           };
-          "immich.teeco.cc" = {
-            service = "http://localhost:${toString config.services.immich.port}";
-          };
           "vaultwarden.teeco.cc" = {
             service = "http://localhost:${toString config.services.vaultwarden.config.ROCKET_PORT}";
           };

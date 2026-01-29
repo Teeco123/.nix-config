@@ -21,6 +21,12 @@
           reverse_proxy localhost:${toString config.services.headscale.port}
         '';
       };
+      "https://immich.teeco.cc" = {
+        extraConfig = ''
+          import vpn
+          reverse_proxy localhost:${toString config.services.immich.port}
+        '';
+      };
       "https://qbittorrent.teeco.cc" = {
         extraConfig = ''
           import admin

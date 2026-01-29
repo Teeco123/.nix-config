@@ -4,7 +4,7 @@
     enable = true;
     port = 2283;
     user = "immich";
-    host = "0.0.0.0";
+    host = "::1";
     mediaLocation = "/mnt/md0/immich";
     openFirewall = true;
     settings = {

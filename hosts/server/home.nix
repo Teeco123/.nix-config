@@ -6,16 +6,14 @@
 
 {
   imports = [
-    inputs.xremap-flake.homeManagerModules.default
     inputs.nixvim.homeModules.nixvim
-    inputs.catppuccin.homeModules.catppuccin
 
-    ../../modules/shared/nvim/nvim.nix
-    ../../modules/shared/eza.nix
-    ../../modules/shared/git.nix
-    ../../modules/shared/zsh.nix
-    ../../modules/shared/yazi.nix
-    ../../modules/shared/wezterm.nix
+    ../../modules/shared/kacper/nvim/nvim.nix
+    ../../modules/shared/kacper/eza.nix
+    ../../modules/shared/kacper/git.nix
+    ../../modules/shared/kacper/zsh.nix
+    ../../modules/shared/kacper/yazi.nix
+    ../../modules/shared/kacper/wezterm.nix
   ];
 
   home = {

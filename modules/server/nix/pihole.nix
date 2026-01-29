@@ -22,6 +22,8 @@
           ];
           hosts = [
             "100.64.0.1 qbittorrent.teeco.cc"
+            "100.64.0.1 immich.teeco.cc"
+            "100.64.0.1 uptime-kuma.teeco.cc"
             "100.64.0.1 prowlarr.teeco.cc"
             "100.64.0.1 sonarr.teeco.cc"
             "100.64.0.1 radarr.teeco.cc"
