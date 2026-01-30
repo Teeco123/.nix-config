@@ -7,5 +7,6 @@
     ./zone-notify/notify-blanka.nix
     ./daily-vacuum.nix
     ./blanka-mealie-list.nix
+    ./service-down.nix
   ];
 }

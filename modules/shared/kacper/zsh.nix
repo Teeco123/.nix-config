@@ -4,14 +4,15 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    
+
     sessionVariables = {
       EDITOR = "nvim";
-    };    
+    };
 
     shellAliases = {
       ls = "eza -a";
-      nix-rebuild = "sudo nixos-rebuild switch --flake /home/kacper/.nix-config#nixos && source ~/.zshrc";
+      pc-rebuild = "sudo nixos-rebuild switch --flake /home/kacper/.nix-config#nixos && source ~/.zshrc";
+      server-rebuild = "sudo nixos-rebuild switch --flake /home/server/.nix-config#server && source ~/.zshrc";
       nix-dev = "nix develop --command zsh";
     };
 

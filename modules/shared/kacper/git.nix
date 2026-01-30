@@ -6,8 +6,11 @@
       user.name = "Kacper Gajko";
       user.email = "kacper.gajko1@icloud.com";
       init.defaultBranch = "main";
-      alias.st = "status";
-      alias.cam = "commit -a -m";
+      alias = {
+        st = "status";
+        cam = "commit -a -m";
+        p = "push";
+      };
     };
   };
 }
