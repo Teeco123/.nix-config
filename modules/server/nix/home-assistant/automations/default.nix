@@ -1,10 +1,11 @@
 { ... }:
 {
   imports = [
+    ./dishwasher
+    ./washing-machine
+    ./zone-notify
     ./hum-check.nix
     ./kitchen-led-switch.nix
-    ./zone-notify/notify-kacper.nix
-    ./zone-notify/notify-blanka.nix
     ./daily-vacuum.nix
     ./blanka-mealie-list.nix
     ./service-down.nix
