@@ -38,5 +38,11 @@
       longitude = "!secret prawiedniki_longitude";
       radius = "!secret prawiedniki_radius";
     }
+    {
+      name = "!secret dominosametyst_name";
+      latitude = "!secret dominosametyst_latitude";
+      longitude = "!secret dominosametyst_longitude";
+      radius = "!secret dominosametyst_radius";
+    }
   ];
 }

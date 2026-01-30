@@ -31,6 +31,7 @@ let
       icon,
       path,
       sub_main ? [ ],
+      styles ? "",
     }:
     {
       type = "custom:bubble-card";
@@ -51,6 +52,7 @@ let
           navigation_path = "/lovelace-home/${path}";
         };
       };
+      styles = styles;
     };
 in
 {
@@ -87,17 +89,23 @@ in
       name = "Kitchen";
       icon = "mdi:fridge";
       path = "3";
+      styles = ''
+        .bubble-sub-button-1 {
+          background-color: ''${hass.states['timer.dishwasher_timer'].state == 'active' ? '#056AB8' : (hass.states['input_boolean.dishwasher_full'].state == 'on' ? '#1DA85E' : '#1C1C1C')} !important;
+        }
+      '';
       sub_main = [
+        (mkSubButton {
+          entity = "input_boolean.dishwasher_full";
+          name = "Dishwasher full";
+          icon = "mdi:dishwasher";
+          show_state = false;
+        })
         (mkSubButton {
           entity = "light.kitchen_lights";
           name = "Lights";
           icon = "mdi:lightbulb-group";
           tap_action.action = "more-info";
-        })
-        (mkSubButton {
-          entity = "input_boolean.dishwasher_full";
-          name = "Dishwasher full";
-          icon = "mdi:dishwasher";
         })
       ];
     })
@@ -112,6 +120,19 @@ in
       name = "Bathroom";
       icon = "mdi:bathtub";
       path = "5";
+      styles = ''
+        .bubble-sub-button-1 {
+          background-color: ''${hass.states['timer.washing_machine_timer'].state == 'active' ? '#056AB8' : (hass.states['input_boolean.washing_machine_full'].state == 'on' ? '#1DA85E' : '#1C1C1C')} !important;
+        }
+      '';
+      sub_main = [
+        (mkSubButton {
+          entity = "input_boolean.washing_machine_full";
+          name = "Washing machine full";
+          icon = "mdi:washing-machine";
+          show_state = false;
+        })
+      ];
     })
 
     (mkRoomButton {

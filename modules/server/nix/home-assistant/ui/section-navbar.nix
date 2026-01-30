@@ -14,6 +14,11 @@
           label = "Vacuum";
           url = "/lovelace-home/1";
         }
+        {
+          icon = "mdi:cog";
+          label = "Settings";
+          url = "/config/dashboard";
+        }
       ];
       desktop = {
         position = "left";
