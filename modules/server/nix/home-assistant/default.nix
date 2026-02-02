@@ -73,6 +73,8 @@
         (import ./ui/kitchen/view.nix)
         (import ./ui/corridor/view.nix)
         (import ./ui/bathroom/view.nix)
+        (import ./ui/primary-bedroom/view.nix)
+        (import ./ui/secondary-bedroom/view.nix)
       ];
     };
 

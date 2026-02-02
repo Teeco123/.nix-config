@@ -43,6 +43,7 @@
                     title = "Humidity too high";
                     message = "Humidity is to high open window to drop it below 50%";
                     data = {
+                      tag = "humidity-check";
                       push = {
                         interruption-level = "time-sensitive";
                       };
@@ -73,6 +74,7 @@
                     title = "Humidity too high";
                     message = "Humidity is to high open window to drop it below 42%";
                     data = {
+                      tag = "humidity-check";
                       push = {
                         interruption-level = "time-sensitive";
                       };

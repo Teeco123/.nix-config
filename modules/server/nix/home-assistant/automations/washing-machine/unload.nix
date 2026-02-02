@@ -27,7 +27,7 @@
           conditions = [
             {
               condition = "time";
-              after = "08:00:00";
+              after = "10:00:00";
               before = "22:00:00";
             }
             {
@@ -71,6 +71,7 @@
                         title = "Unload washing machine!";
                         message = "Press and hold to mark washing machine as unloaded";
                         data = {
+                          tag = "unload-washing-machine";
                           push = {
                             interruption-level = "time-sensitive";
                           };
@@ -100,6 +101,7 @@
                         title = "Unload washing machine!";
                         message = "Press and hold to mark washing machine as unloaded";
                         data = {
+                          tag = "unload-washing-machine";
                           push = {
                             interruption-level = "time-sensitive";
                           };
@@ -141,6 +143,7 @@
                     title = "Unload washing machine!";
                     message = "Press and hold to mark washing machine as unloaded";
                     data = {
+                      tag = "unload-washing-machine";
                       actions = [
                         {
                           action = "washing_machine_unloaded";

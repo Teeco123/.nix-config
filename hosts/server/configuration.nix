@@ -19,6 +19,7 @@
     ../../modules/server/nix/tailscale.nix
     ../../modules/server/nix/borgbackup.nix
     ../../modules/server/nix/qbittorrent.nix
+    ../../modules/server/nix/qbitwebui.nix
     ../../modules/server/nix/vaultwarden.nix
     ../../modules/server/nix/mealie.nix
     ../../modules/server/nix/uptime-kuma.nix

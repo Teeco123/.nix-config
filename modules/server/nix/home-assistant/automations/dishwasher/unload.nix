@@ -27,7 +27,7 @@
           conditions = [
             {
               condition = "time";
-              after = "08:00:00";
+              after = "10:00:00";
               before = "22:00:00";
             }
             {
@@ -75,6 +75,7 @@
                         title = "Unload dishwasher!";
                         message = "Press and hold to mark dishwasher as unloaded";
                         data = {
+                          tag = "unload-dishwasher";
                           actions = [
                             {
                               action = "dishwasher_unloaded";

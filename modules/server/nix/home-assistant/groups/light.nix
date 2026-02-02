@@ -9,5 +9,13 @@
         "light.led_kitchen"
       ];
     }
+    {
+      platform = "group";
+      name = "Secondary Bedroom lights";
+      unique_id = "secondary_bedroom_lights";
+      entities = [
+        "light.secondary_bedroom_desk_led"
+      ];
+    }
   ];
 }

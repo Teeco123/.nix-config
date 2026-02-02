@@ -19,9 +19,6 @@
           "homeassistant.teeco.cc" = {
             service = "http://localhost:${toString config.services.home-assistant.config.http.server_port}";
           };
-          "pedaliada.teeco.cc" = {
-            service = "http://localhost:25565";
-          };
         };
       };
     };

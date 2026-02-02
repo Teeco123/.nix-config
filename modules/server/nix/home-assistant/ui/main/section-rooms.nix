@@ -91,7 +91,7 @@ in
       path = "3";
       styles = ''
         .bubble-sub-button-1 {
-          background-color: ''${hass.states['timer.dishwasher_timer'].state == 'active' ? '#056AB8' : (hass.states['input_boolean.dishwasher_full'].state == 'on' ? '#1DA85E' : '#1C1C1C')} !important;
+          background-color: ''${hass.states['timer.dishwasher_timer'].state == 'active' ? '#056AB8' : (hass.states['input_boolean.dishwasher_full'].state == 'on' ? '#1DA85E' : 'default')} !important;
         }
       '';
       sub_main = [
@@ -122,7 +122,7 @@ in
       path = "5";
       styles = ''
         .bubble-sub-button-1 {
-          background-color: ''${hass.states['timer.washing_machine_timer'].state == 'active' ? '#056AB8' : (hass.states['input_boolean.washing_machine_full'].state == 'on' ? '#1DA85E' : '#1C1C1C')} !important;
+          background-color: ''${hass.states['timer.washing_machine_timer'].state == 'active' ? '#056AB8' : (hass.states['input_boolean.washing_machine_full'].state == 'on' ? '#1DA85E' : 'default')} !important;
         }
       '';
       sub_main = [
@@ -138,7 +138,7 @@ in
     (mkRoomButton {
       name = "Primary Bedroom";
       icon = "mdi:bed-king";
-      path = "primary-bedroom";
+      path = "6";
       sub_main = [
         (mkSubButton {
           entity = "sensor.hum_temp_sensor_primary_bedroom_temperature";
@@ -152,7 +152,15 @@ in
     (mkRoomButton {
       name = "Secondary Bedroom";
       icon = "mdi:bed-single";
-      path = "secondary-bedroom";
+      path = "7";
+      sub_main = [
+        (mkSubButton {
+          entity = "light.secondary_bedroom_lights";
+          name = "Lights";
+          icon = "mdi:lightbulb-group";
+          tap_action.action = "more-info";
+        })
+      ];
     })
   ];
 }

@@ -6,6 +6,7 @@
     deleteMissing = true;
     domains = [
       "*.teeco.cc"
+      "pedaliada.teeco.cc"
     ];
     apiTokenFile = "/home/server/.cloudflared/api_token";
   };

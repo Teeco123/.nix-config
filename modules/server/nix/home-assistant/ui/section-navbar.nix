@@ -17,7 +17,7 @@
         {
           icon = "mdi:cog";
           label = "Settings";
-          url = "/config/dashboard";
+          url = "/dashboard-playground/0";
         }
       ];
       desktop = {
