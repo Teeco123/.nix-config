@@ -180,22 +180,6 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1761880412,
-        "narHash": "sha256-QoJjGd4NstnyOG4mm4KXF+weBzA2AH/7gn1Pmpfcb0A=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "a7fc11be66bdfb5cdde611ee5ce381c183da8386",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixvim": {
       "inputs": {
         "flake-parts": "flake-parts",
@@ -243,7 +227,9 @@
       "inputs": {
         "flake-compat": "flake-compat",
         "libnbtplusplus": "libnbtplusplus",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
         "tomlplusplus": "tomlplusplus"
       },
       "locked": {
@@ -268,7 +254,8 @@
         "nixvim": "nixvim",
         "nur": "nur",
         "polymc": "polymc",
-        "xremap-flake": "xremap-flake"
+        "xremap-flake": "xremap-flake",
+        "zen-browser": "zen-browser"
       }
     },
     "systems": {
@@ -339,6 +326,26 @@
       "original": {
         "owner": "xremap",
         "repo": "nix-flake",
+        "type": "github"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1770266156,
+        "narHash": "sha256-vaoCK5o0y8rjBytkzy2E4ccsiWQnzmYXI0FF40co+eM=",
+        "owner": "youwen5",
+        "repo": "zen-browser-flake",
+        "rev": "60d34d6ff2bcf20487035897c36917d7222afc11",
+        "type": "github"
+      },
+      "original": {
+        "owner": "youwen5",
+        "repo": "zen-browser-flake",
         "type": "github"
       }
     }

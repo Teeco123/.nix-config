@@ -1,12 +1,10 @@
 {
-  config,
   pkgs,
-  inputs,
   ...
 }:
 {
   programs.firefox = {
-    enable = true;
+    enable = false;
     profiles.kacper = {
       extensions = {
         packages = with pkgs.nur.repos.rycee.firefox-addons; [

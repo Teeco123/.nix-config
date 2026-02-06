@@ -25,6 +25,11 @@
     };
     polymc = {
       url = "github:PolyMC/PolyMC";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -34,6 +39,7 @@
       nixpkgs,
       nur,
       home-manager,
+      zen-browser,
       ...
     }@inputs:
     {

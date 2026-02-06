@@ -36,7 +36,7 @@
       exec-once = [
         "hyprpaper"
         "waybar"
-        "[workspace 1 silent] firefox"
+        "[workspace 1 silent] zen"
         "[workspace 2 silent] wezterm"
       ];
 
@@ -109,7 +109,7 @@
       layerrule = [
         "blur on, match:namespace wofi"
         "ignore_alpha 0, match:namespace wofi"
-        "blur on, match:namespace firefox"
+        "blur on, match:namespace zen"
         "blur on, match:namespace wezterm"
       ];
 

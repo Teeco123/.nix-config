@@ -14,6 +14,7 @@
     ../../modules/pc/home/kacper/wofi.nix
     ../../modules/pc/home/kacper/hyprland.nix
     ../../modules/pc/home/kacper/desktop-entries.nix
+    ../../modules/pc/home/kacper/zen-browser.nix
 
     ../../modules/shared/kacper/nvim/nvim.nix
     ../../modules/shared/kacper/eza.nix
