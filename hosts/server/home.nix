@@ -8,12 +8,12 @@
   imports = [
     inputs.nixvim.homeModules.nixvim
 
-    ../../modules/shared/kacper/nvim/nvim.nix
-    ../../modules/shared/kacper/eza.nix
-    ../../modules/shared/kacper/git.nix
-    ../../modules/shared/kacper/zsh.nix
-    ../../modules/shared/kacper/yazi.nix
-    ../../modules/shared/kacper/wezterm.nix
+    ../../modules/home/nvim/nvim.nix
+    ../../modules/home/eza.nix
+    ../../modules/home/git.nix
+    ../../modules/home/zsh.nix
+    ../../modules/home/yazi.nix
+    ../../modules/home/wezterm.nix
   ];
 
   home = {

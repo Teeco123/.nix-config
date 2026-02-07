@@ -7,29 +7,29 @@
   imports = [
     ./hardware-configuration.nix
 
-    ../../modules/server/nix/home-assistant
+    ../../modules/server/home-assistant
 
-    ../../modules/server/nix/cloudflared.nix
-    ../../modules/server/nix/caddy.nix
-    ../../modules/server/nix/dyndns.nix
-    ../../modules/server/nix/immich.nix
-    ../../modules/server/nix/pihole.nix
-    ../../modules/server/nix/jellyfin.nix
-    ../../modules/server/nix/headscale.nix
-    ../../modules/server/nix/tailscale.nix
-    ../../modules/server/nix/borgbackup.nix
-    ../../modules/server/nix/qbittorrent.nix
-    ../../modules/server/nix/qbitwebui.nix
-    ../../modules/server/nix/vaultwarden.nix
-    ../../modules/server/nix/mealie.nix
-    ../../modules/server/nix/uptime-kuma.nix
+    ../../modules/server/cloudflared.nix
+    ../../modules/server/caddy.nix
+    ../../modules/server/dyndns.nix
+    ../../modules/server/immich.nix
+    ../../modules/server/pihole.nix
+    ../../modules/server/jellyfin.nix
+    ../../modules/server/headscale.nix
+    ../../modules/server/tailscale.nix
+    ../../modules/server/borgbackup.nix
+    ../../modules/server/qbittorrent.nix
+    ../../modules/server/qbitwebui.nix
+    ../../modules/server/vaultwarden.nix
+    ../../modules/server/mealie.nix
+    ../../modules/server/uptime-kuma.nix
 
-    ../../modules/server/nix/arr/bazarr.nix
-    ../../modules/server/nix/arr/radarr.nix
-    ../../modules/server/nix/arr/sonarr.nix
-    ../../modules/server/nix/arr/prowlarr.nix
-    ../../modules/server/nix/arr/jellyseerr.nix
-    ../../modules/server/nix/arr/flaresolverr.nix
+    ../../modules/server/arr/bazarr.nix
+    ../../modules/server/arr/radarr.nix
+    ../../modules/server/arr/sonarr.nix
+    ../../modules/server/arr/prowlarr.nix
+    ../../modules/server/arr/jellyseerr.nix
+    ../../modules/server/arr/flaresolverr.nix
   ];
 
   services.thermald.enable = true;

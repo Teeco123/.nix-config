@@ -9,20 +9,18 @@
     inputs.xremap-flake.homeManagerModules.default
     inputs.nixvim.homeModules.nixvim
 
-    ../../modules/pc/home/kacper/firefox.nix
-    ../../modules/pc/home/kacper/waybar.nix
-    ../../modules/pc/home/kacper/wofi.nix
-    ../../modules/pc/home/kacper/hyprland.nix
-    ../../modules/pc/home/kacper/desktop-entries.nix
-    ../../modules/pc/home/kacper/zen-browser.nix
-    ../../modules/pc/home/kacper/niri.nix
-
-    ../../modules/shared/kacper/nvim/nvim.nix
-    ../../modules/shared/kacper/eza.nix
-    ../../modules/shared/kacper/git.nix
-    ../../modules/shared/kacper/zsh.nix
-    ../../modules/shared/kacper/yazi.nix
-    ../../modules/shared/kacper/wezterm.nix
+    ../../modules/home/firefox.nix
+    ../../modules/home/waybar.nix
+    ../../modules/home/wofi.nix
+    ../../modules/home/hyprland.nix
+    ../../modules/home/desktop-entries.nix
+    ../../modules/home/zen-browser.nix
+    ../../modules/home/nvim/nvim.nix
+    ../../modules/home/eza.nix
+    ../../modules/home/git.nix
+    ../../modules/home/zsh.nix
+    ../../modules/home/yazi.nix
+    ../../modules/home/wezterm.nix
   ];
 
   home = {

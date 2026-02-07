@@ -10,10 +10,10 @@
   imports = [
     ./hardware-configuration.nix
 
-    ../../modules/pc/nix/obs.nix
-    ../../modules/pc/nix/tailscale.nix
-    ../../modules/pc/nix/sunshine.nix
-    ../../modules/pc/nix/pipewire.nix
+    ../../modules/pc/obs.nix
+    ../../modules/pc/tailscale.nix
+    ../../modules/pc/sunshine.nix
+    ../../modules/pc/pipewire.nix
   ];
 
   fileSystems."/mnt/obs" = {
