@@ -14,6 +14,8 @@
     ../../modules/pc/home/kacper/wofi.nix
     ../../modules/pc/home/kacper/hyprland.nix
     ../../modules/pc/home/kacper/desktop-entries.nix
+    ../../modules/pc/home/kacper/zen-browser.nix
+    ../../modules/pc/home/kacper/niri.nix
 
     ../../modules/shared/kacper/nvim/nvim.nix
     ../../modules/shared/kacper/eza.nix
@@ -24,8 +26,8 @@
   ];
 
   home = {
-    username = "blanka";
-    homeDirectory = "/home/blanka";
+    username = "kacper";
+    homeDirectory = "/home/kacper";
     stateVersion = "25.05";
     packages = with pkgs; [
       wl-clipboard
@@ -54,8 +56,10 @@
       settings = {
         preload = [ "/home/kacper/.nix-config/wallpapers/whitegray" ];
         wallpaper = [
-          "DP-1, /home/kacper/.nix-config/wallpapers/whitegray"
-          "HDMI-A-1, /home/kacper/.nix-config/wallpapers/whitegray"
+          {
+            monitor = "DP-1";
+            path = "/home/kacper/.nix-config/wallpapers/whitegray";
+          }
         ];
       };
     };

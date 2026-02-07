@@ -57,8 +57,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = { inherit inputs; };
-              home-manager.users.kacper = ./hosts/pc/kacper.nix;
-              home-manager.users.blanka = ./hosts/pc/blanka.nix;
+              home-manager.users.kacper = ./hosts/pc/home.nix;
             }
           ];
         };
