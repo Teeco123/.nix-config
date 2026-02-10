@@ -34,6 +34,9 @@
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    vicinae = {
+      url = "github:vicinaehq/vicinae";
+    };
   };
 
   outputs =
@@ -44,6 +47,8 @@
       apple-silicon,
       home-manager,
       zen-browser,
+      nixvim,
+      vicinae,
       ...
     }@inputs:
     {
@@ -58,10 +63,12 @@
               nixpkgs.overlays = [ inputs.polymc.overlay ];
             }
             {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit inputs; };
-              home-manager.users.kacper = ./hosts/pc/home.nix;
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = { inherit inputs; };
+                users.kacper = ./hosts/pc/home.nix;
+              };
             }
           ];
         };
@@ -72,10 +79,12 @@
             home-manager.nixosModules.home-manager
             nur.modules.nixos.default
             {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit inputs; };
-              home-manager.users.server = ./hosts/server/home.nix;
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = { inherit inputs; };
+                users.server = ./hosts/server/home.nix;
+              };
             }
           ];
         };
@@ -100,10 +109,12 @@
           ./hosts/macbook/configuration.nix
           home-manager.darwinModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.kacper = ./hosts/macbook/home.nix;
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = { inherit inputs; };
+              users.kacper = ./hosts/macbook/home.nix;
+            };
           }
         ];
       };

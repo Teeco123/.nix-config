@@ -75,48 +75,45 @@
               font-size: 24px;
               padding: 3px 8px 3px 17px;
               margin: 4px 0px 4px 4px;
-              background: rgba(0,0,0,0.15);
-              border-radius: 10px 0px 0px 10px;
+              background: none;
             }
 
             #cpu {
               padding: 3px 15px;
               margin: 4px 0px 4px 0px;
-              background: rgba(0,0,0,0.15);
+              background: none;
             }
 
             #memory {
               padding: 3px 15px;
               margin: 4px 4px 4px 0px;
-              background: rgba(0,0,0,0.15);
-              border-radius: 0px 10px 10px 0px;
+              background: none;
             }
 
             #pulseaudio {
               padding: 3px 15px;
               margin: 4px 0px 4px 0px;
-              background: rgba(0,0,0,0.15);
+              background: none;
             }
 
             #network {
               font-size: 20px;
               padding: 3px 10px 3px 15px;
               margin: 4px 0px 4px 0px;
-              background: rgba(0,0,0,0.15);
+              background: none;
             }
 
             #clock {
               padding: 3px 15px;
               margin: 4px 0px 4px 0px;
-              background: rgba(0,0,0,0.15);
+              background: none;
             }
 
       			#custom-power {
       				font-size: 20px;
               padding: 3px 10px 3px 15px;
               margin: 4px 4px 4px 0px;
-              background: rgba(0,0,0,0.15);
-              border-radius: 0px 10px 10px 0px;
+              background: none;
             }
     '';
   };

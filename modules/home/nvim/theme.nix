@@ -1,6 +1,6 @@
-{ ... }:
+_:
 {
-  colorschemes.cyberdream = {
+  programs.nixvim.colorschemes.cyberdream = {
     enable = true;
     settings = {
       transparent = true;
