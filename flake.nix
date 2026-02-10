@@ -11,6 +11,9 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    apple-silicon = {
+      url = "github:nix-community/nixos-apple-silicon";
+    };
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -38,6 +41,7 @@
       nix-darwin,
       nixpkgs,
       nur,
+      apple-silicon,
       home-manager,
       zen-browser,
       ...
@@ -72,6 +76,21 @@
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = { inherit inputs; };
               home-manager.users.server = ./hosts/server/home.nix;
+            }
+          ];
+        };
+      macbook = nixpkgs.lib.nixosSystem {
+          system = "aarch64-linux";
+          modules = [
+            ./hosts/macbook/configuration.nix
+	    apple-silicon.nixosModules.default
+            home-manager.nixosModules.home-manager
+            nur.modules.nixos.default
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = { inherit inputs; };
+              home-manager.users.kacper = ./hosts/macbook/home.nix;
             }
           ];
         };

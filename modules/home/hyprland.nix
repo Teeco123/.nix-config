@@ -22,6 +22,16 @@
 
       monitorv2 = [
         {
+          output = "eDP-1";
+          mode = "3024x1890@120";
+          position = "0x0";
+          scale = 1;
+          bitdepth = 10;
+          cm = "hdr";
+          sdrbrightness = 1.2;
+          sdrsaturation = 0.98;
+        }
+        {
           output = "DP-1";
           mode = "3440x1440@160";
           position = "0x0";
@@ -138,6 +148,7 @@
         "$mainMod, 3, workspace, 3"
         ", XF86LaunchB, exec, $menu"
         ", F4, exec, $menu"
+        ", XF86Search, exec, $menu"
         "$mainMod, M, exit"
         "$mainMod, Q, killactive"
       ];

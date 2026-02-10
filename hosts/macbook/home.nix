@@ -8,14 +8,14 @@
   imports = [
     inputs.xremap-flake.homeManagerModules.default
     inputs.nixvim.homeModules.nixvim
-    inputs.catppuccin.homeModules.catppuccin
 
-    ../../modules/shared/nvim/nvim.nix
-    ../../modules/shared/eza.nix
-    ../../modules/shared/git.nix
-    ../../modules/shared/zsh.nix
-    ../../modules/shared/yazi.nix
-    ../../modules/shared/wezterm.nix
+    ../../modules/home/nvim/nvim.nix
+    ../../modules/home/eza.nix
+    ../../modules/home/git.nix
+    ../../modules/home/zsh.nix
+    ../../modules/home/yazi.nix
+    ../../modules/home/wezterm.nix
+    ../../modules/home/hyprland.nix
   ];
 
   home = {
