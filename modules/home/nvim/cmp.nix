@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+_:
 {
-  plugins = {
+  programs.nixvim.plugins = {
     cmp = {
       enable = true;
       settings = {

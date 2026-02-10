@@ -18,7 +18,7 @@
     };
     settings = {
       "$mainMod" = "Super_L";
-      "$menu" = "pgrep wofi >/dev/null 2>&1 && pkill wofi || wofi --show drun";
+      "$menu" = "vicinae toggle";
 
       monitorv2 = [
         {
@@ -31,11 +31,22 @@
           sdrbrightness = 1.2;
           sdrsaturation = 0.98;
         }
+        {
+          output = "HDMI-A-1";
+          mode = "3240x21600@120";
+          position = "0x0";
+          scale = 1;
+          bitdepth = 10;
+          cm = "hdr";
+          sdrbrightness = 1.2;
+          sdrsaturation = 0.98;
+        }
       ];
 
       exec-once = [
         "hyprpaper"
         "waybar"
+        "vicinae server"
         "[workspace 1 silent] zen"
         "[workspace 2 silent] wezterm"
       ];
@@ -47,8 +58,6 @@
         resize_on_border = true;
         allow_tearing = false;
         layout = "dwindle";
-        "col.active_border" = "rgba(248,195,204,0.45)";
-        "col.inactive_border" = "rgba(595959aa)";
       };
 
       misc = {
@@ -67,7 +76,6 @@
           enabled = true;
           range = 4;
           render_power = 3;
-          color = "rgba(1a1a1aee)";
         };
         blur = {
           enabled = true;

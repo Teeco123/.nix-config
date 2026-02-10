@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  plugins.treesitter = {
+  programs.nixvim.plugins.treesitter = {
     enable = true;
     settings = {
       highlight = {

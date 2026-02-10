@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+_:
 {
-  plugins.lualine = {
-    enable = false;
+  programs.nixvim.plugins.lualine = {
+    enable = true;
     settings = {
       options = {
         always_divide_middle = true;
