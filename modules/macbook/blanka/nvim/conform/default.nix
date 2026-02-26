@@ -5,10 +5,14 @@
     settings = {
       formatters_by_ft = {
         nix = [ "nixfmt" ];
+        css = [ "prettierd" ];
       };
       formatters = {
         nixfmt = {
           command = lib.getExe pkgs.nixfmt;
+        };
+        prettierd = {
+          command = lib.getExe pkgs.prettierd;
         };
       };
       format_on_save = ''

@@ -6,19 +6,24 @@
 
 {
   imports = [
-    #inputs.xremap-flake.homeManagerModules.default
+    inputs.xremap-flake.homeManagerModules.default
     inputs.nixvim.homeModules.nixvim
-    #inputs.vicinae.homeManagerModules.default
+    inputs.vicinae.homeManagerModules.default
     inputs.noctalia.homeModules.default
 
-    ../../modules/macbook/blanka/hyprland.nix
-    ../../modules/macbook/blanka/zsh.nix
-    ../../modules/macbook/blanka/wezterm.nix
+    ../../modules/macbook/blanka/hyprland
+    ../../modules/macbook/blanka/zsh
+    ../../modules/macbook/blanka/wezterm
     ../../modules/macbook/blanka/nvim
-    ../../modules/macbook/blanka/yazi.nix
-    ../../modules/macbook/blanka/zen-browser.nix
-    ../../modules/macbook/blanka/eza.nix
+    ../../modules/macbook/blanka/yazi
+    ../../modules/macbook/blanka/zen-browser
+    ../../modules/macbook/blanka/eza
     ../../modules/macbook/blanka/noctalia-shell
+    ../../modules/macbook/blanka/git
+    ../../modules/macbook/blanka/waybar
+    ../../modules/macbook/blanka/vicinae
+    ../../modules/macbook/blanka/hyprpaper
+    ../../modules/macbook/blanka/xremap
   ];
 
   home = {

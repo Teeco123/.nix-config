@@ -18,6 +18,7 @@
       cpp
       c
       css
+      qmljs
     ];
   };
 }

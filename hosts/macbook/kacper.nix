@@ -10,6 +10,7 @@
     inputs.nixvim.homeModules.nixvim
     #inputs.vicinae.homeManagerModules.default
     inputs.noctalia.homeModules.default
+    inputs.stylix.homeModules.default
 
     ../../modules/macbook/kacper/nvim
     ../../modules/macbook/kacper/eza
@@ -33,6 +34,11 @@
       feishin
       qt6.qtdeclarative
     ];
+  };
+
+  stylix = {
+    enable = false;
+    image = ../../wallpapers/sanrio-cinnamoroll.png;
   };
 
   programs.home-manager.enable = true;

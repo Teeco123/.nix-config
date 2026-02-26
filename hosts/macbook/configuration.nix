@@ -2,6 +2,7 @@ _: {
   imports = [
     ./hardware-configuration.nix
 
+    ../../modules/macbook/nix/environment
     ../../modules/macbook/nix/nix
     ../../modules/macbook/nix/pipewire
     ../../modules/macbook/nix/boot

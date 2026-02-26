@@ -1,19 +1,19 @@
 { ... }:
 {
   imports = [
-    ./cmp.nix
-    ./conform.nix
-    ./diagnostics.nix
-    ./gitsigns.nix
-    ./keymaps.nix
-    ./lint.nix
-    ./lsp.nix
-    ./lualine.nix
-    ./options.nix
-    ./telescope.nix
-    ./theme.nix
-    ./transparent.nix
-    ./treesitter.nix
+    ./cmp
+    ./conform
+    ./diagnostics
+    ./gitsigns
+    ./keymaps
+    ./lint
+    ./lsp
+    ./lualine
+    ./options
+    ./telescope
+    ./theme
+    ./transparent
+    ./treesitter
   ];
   programs.nixvim = {
     enable = true;

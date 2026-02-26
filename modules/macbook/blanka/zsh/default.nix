@@ -1,4 +1,4 @@
-{ ... }:
+_:
 
 {
   programs.zsh = {
@@ -11,8 +11,7 @@
 
     shellAliases = {
       ls = "eza -a";
-      pc-rebuild = "sudo nixos-rebuild switch --flake /home/kacper/.nix-config#nixos && source ~/.zshrc";
-      server-rebuild = "sudo nixos-rebuild switch --flake /home/server/.nix-config#server && source ~/.zshrc";
+      nix-rebuild = "sudo nixos-rebuild switch --flake /home/kacper/.nix-config#macbook && source ~/.zshrc";
       nix-dev = "nix develop --command zsh";
     };
 
