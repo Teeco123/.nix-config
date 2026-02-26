@@ -3,10 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nix-darwin = {
-      url = "github:nix-darwin/nix-darwin/master";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,10 +22,6 @@
       url = "github:xremap/nix-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    polymc = {
-      url = "github:PolyMC/PolyMC";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -37,21 +29,30 @@
     vicinae = {
       url = "github:vicinaehq/vicinae";
     };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
     {
-      nix-darwin,
       nixpkgs,
-      nur,
-      apple-silicon,
       home-manager,
+      apple-silicon,
+      nur,
       zen-browser,
       nixvim,
       vicinae,
+      noctalia,
       ...
     }@inputs:
     {
+      formatter = {
+        aarch64-linux = nixpkgs.legacyPackages.aarch64-linux.nixfmt-tree;
+        x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-tree;
+      };
+
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
@@ -59,9 +60,6 @@
             ./hosts/pc/configuration.nix
             home-manager.nixosModules.home-manager
             nur.modules.nixos.default
-            {
-              nixpkgs.overlays = [ inputs.polymc.overlay ];
-            }
             {
               home-manager = {
                 useGlobalPkgs = true;
@@ -88,35 +86,26 @@
             }
           ];
         };
-      macbook = nixpkgs.lib.nixosSystem {
+        macbook = nixpkgs.lib.nixosSystem {
           system = "aarch64-linux";
           modules = [
             ./hosts/macbook/configuration.nix
-	    apple-silicon.nixosModules.default
+            apple-silicon.nixosModules.default
             home-manager.nixosModules.home-manager
             nur.modules.nixos.default
             {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit inputs; };
-              home-manager.users.kacper = ./hosts/macbook/home.nix;
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = { inherit inputs; };
+                users = {
+                  kacper = ./hosts/macbook/kacper.nix;
+                  blanka = ./hosts/macbook/blanka.nix;
+                };
+              };
             }
           ];
         };
-      };
-      darwinConfigurations."Kacpers-MacBook-Pro" = nix-darwin.lib.darwinSystem {
-        modules = [
-          ./hosts/macbook/configuration.nix
-          home-manager.darwinModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              extraSpecialArgs = { inherit inputs; };
-              users.kacper = ./hosts/macbook/home.nix;
-            };
-          }
-        ];
       };
     };
 }

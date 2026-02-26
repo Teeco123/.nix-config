@@ -1,8 +1,12 @@
-{ config, ... }:
+{ pkgs, config, ... }:
 
 {
   services.caddy = {
     enable = true;
+    package = pkgs.caddy.withPlugins {
+      plugins = [ "github.com/caddy-dns/powerdns@v1.0.1" ];
+      hash = "sha256-F/jqR4iEsklJFycTjSaW8B/V3iTGqqGOzwYBUXxRKrc=";
+    };
     virtualHosts = {
       "(admin)" = {
         extraConfig = ''
