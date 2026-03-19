@@ -44,5 +44,17 @@
       longitude = "!secret dominosametyst_longitude";
       radius = "!secret dominosametyst_radius";
     }
+    {
+      name = "!secret kwarchome_name";
+      latitude = "!secret kwarchome_latitude";
+      longitude = "!secret kwarchome_longitude";
+      radius = "!secret kwarchome_radius";
+    }
+    {
+      name = "!secret kostrhome_name";
+      latitude = "!secret kostrhome_latitude";
+      longitude = "!secret kostrhome_longitude";
+      radius = "!secret kostrhome_radius";
+    }
   ];
 }

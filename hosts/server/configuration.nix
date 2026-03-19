@@ -23,6 +23,9 @@
     ../../modules/server/vaultwarden.nix
     ../../modules/server/mealie.nix
     ../../modules/server/uptime-kuma.nix
+    ../../modules/server/dawarich.nix
+    ../../modules/server/samba.nix
+    ../../modules/server/adguardhome.nix
 
     ../../modules/server/arr/bazarr.nix
     ../../modules/server/arr/radarr.nix
@@ -40,6 +43,22 @@
     powertop = {
       enable = true;
     };
+  };
+
+  systemd.services.jellyfin.environment.LIBVA_DRIVER_NAME = "iHD";
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "iHD";
+  };
+
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-ocl
+      intel-media-driver
+      intel-compute-runtime
+      vpl-gpu-rt
+      libvdpau-va-gl
+    ];
   };
 
   nix = {
@@ -92,6 +111,22 @@
     networkmanager = {
       enable = true;
     };
+    defaultGateway = {
+      address = "192.168.100.1";
+      interface = "enp1s0";
+    };
+    interfaces = {
+      enp1s0 = {
+        ipv4 = {
+          addresses = [
+            {
+              addresses = "192.168.100.2";
+              prefixLength = 24;
+            }
+          ];
+        };
+      };
+    };
     firewall = {
       allowedTCPPorts = [
         34629
@@ -100,10 +135,18 @@
         80
         443
         25565
+        5232
+        53
+        9987
+        30033
       ];
       allowedUDPPorts = [
         25565
         45650
+        53
+        67
+        9987
+        30033
       ];
     };
   };
@@ -119,6 +162,7 @@
   users = {
     groups = {
       media = { };
+      smbusers = { };
     };
     users = {
       server = {
@@ -126,7 +170,22 @@
         shell = pkgs.zsh;
         extraGroups = [
           "wheel"
+          "docker"
         ];
+      };
+      jellyfin = {
+        extraGroups = [
+          "video"
+          "render"
+        ];
+      };
+      kacper = {
+        isNormalUser = true;
+        extraGroups = [ "smbusers" ];
+      };
+      blanka = {
+        isNormalUser = true;
+        extraGroups = [ "smbusers" ];
       };
     };
   };

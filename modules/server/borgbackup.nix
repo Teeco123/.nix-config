@@ -1,8 +1,7 @@
-{ ... }:
-{
+_: {
   services.borgbackup = {
     jobs = {
-      "local" = {
+      "immich-local" = {
         paths = [ "/mnt/md0/immich" ];
         repo = "/mnt/backup/repo";
         compression = "auto,lz4";

@@ -26,6 +26,10 @@
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     vicinae = {
       url = "github:vicinaehq/vicinae";
     };
@@ -47,6 +51,7 @@
       nur,
       zen-browser,
       nixvim,
+      sops-nix,
       vicinae,
       noctalia,
       stylix,
@@ -98,6 +103,7 @@
             apple-silicon.nixosModules.default
             home-manager.nixosModules.home-manager
             nur.modules.nixos.default
+            sops-nix.nixosModules.sops
             {
               home-manager = {
                 useGlobalPkgs = true;

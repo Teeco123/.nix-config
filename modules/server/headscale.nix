@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   services.headscale = {
     enable = true;
     user = "headscale";

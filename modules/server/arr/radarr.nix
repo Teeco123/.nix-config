@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   services.radarr = {
     enable = true;
     user = "radarr";
@@ -9,10 +8,6 @@
       server = {
         port = 7878;
       };
-      update = {
-        automatically = false;
-      };
     };
   };
-  systemd.services.radarr.serviceConfig.UMask = "002";
 }

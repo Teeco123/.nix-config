@@ -32,7 +32,7 @@
           event_type = "tag_scanned";
           event_data = {
             tag_id = "305bacaf-15cc-4e63-a434-b22e5220a346";
-            device_id = "f1ga98762612463afka9a14a83a32374";
+            device_id = "013c903eee0aec271b7464ab34932d36";
           };
           id = "eryk";
         }

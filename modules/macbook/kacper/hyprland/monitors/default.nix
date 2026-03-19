@@ -5,10 +5,6 @@ _: {
       mode = "3024x1964@60";
       position = "0x0";
       scale = "auto";
-      bitdepth = 10;
-      cm = "hdr";
-      sdrbrightness = 1.2;
-      sdrsaturation = 0.98;
     }
   ];
 }

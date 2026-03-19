@@ -7,12 +7,12 @@ _: {
     inactive_opacity = 0.8;
 
     shadow = {
-      enabled = true;
+      enabled = false;
       range = 4;
       render_power = 3;
     };
     blur = {
-      enabled = true;
+      enabled = false;
       size = 8;
       passes = 1;
       vibrancy = 0.1696;

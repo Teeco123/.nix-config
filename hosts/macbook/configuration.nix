@@ -14,6 +14,7 @@ _: {
     ../../modules/macbook/nix/programs
     ../../modules/macbook/nix/time
     ../../modules/macbook/nix/fonts
+    ../../modules/macbook/nix/sops
   ];
 
   system.stateVersion = "25.11"; # Did you read the comment?

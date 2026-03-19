@@ -17,5 +17,13 @@
         "light.secondary_bedroom_desk_led"
       ];
     }
+    {
+      platform = "group";
+      name = "Primary Bedroom lights";
+      unique_id = "primary_bedroom_lights";
+      entities = [
+        "light.primary_bedroom_led"
+      ];
+    }
   ];
 }

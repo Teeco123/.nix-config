@@ -44,7 +44,6 @@
       wake_on_lan = { };
 
       lovelace = {
-        mode = "yaml";
         dashboards = {
           lovelace-home = {
             mode = "yaml";
@@ -59,6 +58,7 @@
 
       "script ui" = "!include scripts.yaml";
       "automation ui" = "!include automations.yaml";
+      "scene ui" = "!include scenes.yaml";
     };
 
     lovelaceConfig = {
@@ -86,14 +86,12 @@
       "local_calendar"
       "open_meteo"
       "wake_on_lan"
-      "google_generative_ai_conversation"
-      "uptime_kuma"
     ];
 
     customLovelaceModules = with pkgs.home-assistant-custom-lovelace-modules; [
       bubble-card
       navbar-card
-      (pkgs.callPackage ./pkgs/kiosk-mode.nix { })
+      kiosk-mode
     ];
 
     customComponents = [

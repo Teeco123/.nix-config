@@ -54,6 +54,13 @@ _: {
         useCustomFont = false;
       }
       {
+        displayMode = "forceOpen";
+        iconColor = "none";
+        id = "KeyboardLayout";
+        showIcon = true;
+        textColor = "none";
+      }
+      {
         id = "ControlCenter";
         colorizeDistroLogo = false;
         colorizeSystemIcon = "none";

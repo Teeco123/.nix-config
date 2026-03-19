@@ -1,7 +1,6 @@
-{ ... }:
-{
+_: {
   services.uptime-kuma = {
-    enable = true;
+    enable = false;
     settings = {
       PORT = "3001";
     };

@@ -11,6 +11,8 @@
     ./exec-once
     ./animations
     ./decoration
+    ./plugins
+    ./env
   ];
 
   wayland.windowManager.hyprland = {

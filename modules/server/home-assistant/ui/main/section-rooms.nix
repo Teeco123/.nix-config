@@ -141,6 +141,12 @@ in
       path = "6";
       sub_main = [
         (mkSubButton {
+          entity = "light.primary_bedroom_lights";
+          name = "Lights";
+          icon = "mdi:lightbulb-group";
+          tap_action.action = "more-info";
+        })
+        (mkSubButton {
           entity = "sensor.hum_temp_sensor_primary_bedroom_temperature";
           name = "Temperature";
           icon = "mdi:thermometer";

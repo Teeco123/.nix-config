@@ -3,7 +3,7 @@ _: {
     useWallpaperColors = true;
     predefinedScheme = "Rosey AMOLED";
     darkMode = false;
-    schedulingMode = "location";
+    schedulingMode = "off";
     manualSunrise = "06:00";
     manualSunset = "18:00";
     generationMethod = "faithful";

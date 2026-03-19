@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   services.qbittorrent = {
     enable = true;
     webuiPort = 8080;
@@ -8,5 +7,4 @@
     group = "media";
     openFirewall = true;
   };
-  systemd.services.qbittorrent.serviceConfig.UMask = "002";
 }

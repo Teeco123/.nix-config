@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   services.immich = {
     enable = true;
     port = 2283;
@@ -21,8 +20,6 @@
       port = 5432;
       user = "immich";
       name = "immich";
-      enableVectorChord = true;
-      enableVectors = false;
       createDB = false;
     };
     machine-learning = {

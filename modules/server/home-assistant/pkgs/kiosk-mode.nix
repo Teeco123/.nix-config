@@ -1,32 +1,60 @@
 {
   lib,
   stdenvNoCC,
-  fetchurl,
+  fetchFromGitHub,
+  fetchPnpmDeps,
+  pnpmConfigHook,
+  pnpm,
+  nodejs,
 }:
 
 stdenvNoCC.mkDerivation rec {
   pname = "kiosk-mode";
-  version = "9.0.2";
+  version = "10.0.1";
 
-  src = fetchurl {
-    url = "https://github.com/NemesisRE/kiosk-mode/releases/download/v${version}/kiosk-mode.js";
-    hash = "sha256-hnuJqH82Vjm609acadCk7W690SEj0YHRkcCjntDGdDw=";
+  src = fetchFromGitHub {
+    owner = "nemesisre";
+    repo = "kiosk-mode";
+    tag = "v${version}";
+    hash = "sha256-FkQ7WCpxRSYcLZFL87OvAmW7vAvdOFSQSb0KG7PAZug=";
   };
 
-  dontUnpack = true;
+  pnpmDeps = fetchPnpmDeps {
+    inherit pname version src;
+    fetcherVersion = 1;
+    hash = "sha256-PyMmkeQtip3ZHazJr8vG5OP5mlpHs/JIAz99nBzCfIc=";
+  };
+
+  nativeBuildInputs = [
+    pnpmConfigHook
+    pnpm
+    nodejs
+  ];
+
+  buildPhase = ''
+    runHook preBuild
+
+    pnpm run build
+
+    runHook postBuild
+  '';
 
   installPhase = ''
-    mkdir -p $out
-    cp $src $out/kiosk-mode.js
+    runHook preInstall
+
+    mkdir -p "$out"
+    cp dist/* "$out"
+
+    runHook postInstall
   '';
 
   passthru.entrypoint = "kiosk-mode.js";
 
-  meta = with lib; {
-    description = "Kiosk Mode for Home Assistant";
+  meta = {
+    description = "Hides the Home Assistant header and/or sidebar";
     homepage = "https://github.com/NemesisRE/kiosk-mode";
-    license = licenses.mit;
-    maintainers = with maintainers; [ ];
-    platforms = platforms.all;
+    license = lib.licenses.mit;
+    maintainers = with lib.maintainers; [ teeco123 ];
+    platforms = lib.platforms.all;
   };
 }

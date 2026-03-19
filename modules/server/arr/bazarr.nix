@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   services.bazarr = {
     enable = true;
     user = "bazarr";

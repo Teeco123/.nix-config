@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 {
   services.cloudflare-dyndns = {
     enable = true;
@@ -6,8 +6,11 @@
     deleteMissing = true;
     domains = [
       "*.teeco.cc"
+      "headscale.teeco.cc"
+      "jellyfin.teeco.cc"
+      "jellyseerr.teeco.cc"
       "pedaliada.teeco.cc"
     ];
-    apiTokenFile = "/home/server/.cloudflared/api_token";
+    apiTokenFile = config.sops.secrets.cloudflare-dyndns-env.path;
   };
 }

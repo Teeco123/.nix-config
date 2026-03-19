@@ -1,16 +1,13 @@
 _: {
   wayland.windowManager.hyprland.settings = {
     workspace = [
-      "1, monitor:DP-1"
-      "2, monitor:DP-1"
-      "3, monitor:DP-1, gapsin:0, gapsout:0, border:false, rounding:false"
+      "1, monitor:eDP-1"
+      "2, monitor:eDP-1"
+      "3, monitor:eDP-1"
+      "4, monitor:eDP-1"
     ];
 
     layerrule = [
-      "blur on, match:namespace wofi"
-      "ignore_alpha 0, match:namespace wofi"
-      "blur on, match:namespace zen"
-      "blur on, match:namespace wezterm"
     ];
 
     windowrule = [

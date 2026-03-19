@@ -1,6 +1,14 @@
 {
   type = "grid";
   column_span = 2;
+  visibility = [
+    {
+      condition = "user";
+      users = [
+        "cb0729c2021e4d3ea24d04ad25ed9ea6"
+      ];
+    }
+  ];
   cards = [
     {
       type = "custom:bubble-card";
@@ -39,14 +47,7 @@
           color = "white";
         }
       ];
-      visibility = [
-        {
-          condition = "user";
-          users = [
-            "cb0729c2021e4d3ea24d04ad25ed9ea6"
-          ];
-        }
-      ];
+
       grid_options = {
         columns = "full";
         rows = 4;

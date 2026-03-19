@@ -35,6 +35,7 @@
       obsidian
       unzip
       hyprcursor
+      github-desktop
     ];
   };
 

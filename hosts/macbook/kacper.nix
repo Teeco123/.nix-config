@@ -6,11 +6,12 @@
 
 {
   imports = [
-    #inputs.xremap-flake.homeManagerModules.default
+    inputs.xremap-flake.homeManagerModules.default
     inputs.nixvim.homeModules.nixvim
-    #inputs.vicinae.homeManagerModules.default
+    inputs.vicinae.homeManagerModules.default
     inputs.noctalia.homeModules.default
     inputs.stylix.homeModules.default
+    inputs.sops-nix.homeManagerModules.sops
 
     ../../modules/macbook/kacper/nvim
     ../../modules/macbook/kacper/eza
@@ -22,6 +23,7 @@
     ../../modules/macbook/kacper/zen-browser
     ../../modules/macbook/kacper/noctalia-shell
     ../../modules/macbook/kacper/obsidian
+    ../../modules/macbook/kacper/sops
   ];
 
   home = {
@@ -33,6 +35,12 @@
       prismlauncher
       feishin
       qt6.qtdeclarative
+      signal-desktop
+      libreoffice-fresh
+      bitwarden-desktop
+      gh
+      age
+      sops
     ];
   };
 
