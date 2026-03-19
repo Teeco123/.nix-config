@@ -1,7 +1,9 @@
 keys:
-  - &admin_kacper age1uhw0uqauezqlzs972n9cxpqtjqn88s3vg2d7m7m5g4hpjpr7qsxsv8jqcl
+  - &kacper age1uhw0uqauezqlzs972n9cxpqtjqn88s3vg2d7m7m5g4hpjpr7qsxsv8jqcl
+  - &server age1dzrqy2yznvxh0jytrrqzcgtjprfale2fchcm7kkwjtwcqwf5250s0lxrz8
 creation_rules:
   - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
     key_groups:
     - age:
-      - *admin_kacper
+      - *kacper
+      - *server
