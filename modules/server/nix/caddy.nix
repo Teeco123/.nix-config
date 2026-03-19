@@ -47,7 +47,7 @@
       "https://qbittorrent.teeco.cc" = {
         extraConfig = ''
           import admin
-          reverse_proxy localhost:3000
+          reverse_proxy localhost:${toString config.services.qbittorrent.webuiPort}
         '';
       };
       "https://radarr.teeco.cc" = {

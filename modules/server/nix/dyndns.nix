@@ -1,5 +1,9 @@
 { config, ... }:
 {
+  sops.secrets = {
+    cloudflare-dyndns-env = { };
+  };
+
   services.cloudflare-dyndns = {
     enable = true;
     ipv4 = true;

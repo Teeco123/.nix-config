@@ -6,14 +6,17 @@
 
 {
   imports = [
+    inputs.xremap-flake.homeManagerModules.default
     inputs.nixvim.homeModules.nixvim
+    inputs.sops-nix.homeManagerModules.sops
 
-    ../../modules/home/nvim/nvim.nix
-    ../../modules/home/eza.nix
-    ../../modules/home/git.nix
-    ../../modules/home/zsh.nix
-    ../../modules/home/yazi.nix
-    ../../modules/home/wezterm.nix
+    ../../modules/server/server/nvim
+    ../../modules/server/server/eza
+    ../../modules/server/server/git
+    ../../modules/server/server/zsh
+    ../../modules/server/server/yazi
+    ../../modules/server/server/wezterm
+    ../../modules/server/server/sops
   ];
 
   home = {

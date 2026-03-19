@@ -86,6 +86,7 @@
             ./hosts/server/configuration.nix
             home-manager.nixosModules.home-manager
             nur.modules.nixos.default
+            sops-nix.nixosModules.sops
             {
               home-manager = {
                 useGlobalPkgs = true;
