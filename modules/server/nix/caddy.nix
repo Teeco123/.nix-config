@@ -86,14 +86,13 @@
           reverse_proxy localhost:${toString config.services.adguardhome.port}
         '';
       };
+
+      # VPN
       "https://homeassistant.teeco.cc" = {
         extraConfig = ''
-          import admin
           reverse_proxy localhost:${toString config.services.home-assistant.config.http.server_port}
         '';
       };
-
-      # VPN
       "https://immich.teeco.cc" = {
         extraConfig = ''
           reverse_proxy localhost:${toString config.services.immich.port}

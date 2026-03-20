@@ -7,6 +7,16 @@
     ./groups
     ./automations
   ];
+
+  sops.secrets = {
+    secrets = {
+      sopsFile = ../../../../secrets/home-assistant.yaml;
+      owner = "hass";
+      path = "/var/lib/hass/secrets.yaml";
+      restartUnits = [ "home-assistant.service" ];
+    };
+  };
+
   services.home-assistant = {
     enable = true;
     openFirewall = true;
