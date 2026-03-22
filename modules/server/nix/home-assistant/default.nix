@@ -22,10 +22,10 @@
     openFirewall = true;
     config = {
       homeassistant = {
-        name = "!secret home_name";
-        longitude = "!secret home_longitude";
-        latitude = "!secret home_latitude";
-        radius = "!secret home_radius";
+        name = "!secret zone1_name";
+        longitude = "!secret zone1_longitude";
+        latitude = "!secret zone1_latitude";
+        radius = "!secret zone1_radius";
         temperature_unit = "C";
         time_zone = "Europe/Warsaw";
         unit_system = "metric";

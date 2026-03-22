@@ -1,60 +1,65 @@
-{ ... }:
-{
+_: {
   services.home-assistant.config.zone = [
     {
-      name = "!secret khome_name";
-      latitude = "!secret khome_latitude";
-      longitude = "!secret khome_longitude";
-      radius = "!secret khome_radius";
+      name = "!secret zone2_name";
+      latitude = "!secret zone2_latitude";
+      longitude = "!secret zone2_longitude";
+      radius = "!secret zone2_radius";
     }
     {
 
-      name = "!secret pollub_name";
-      latitude = "!secret pollub_latitude";
-      longitude = "!secret pollub_longitude";
-      radius = "!secret pollub_radius";
+      name = "!secret zone3_name";
+      latitude = "!secret zone3_latitude";
+      longitude = "!secret zone3_longitude";
+      radius = "!secret zone3_radius";
     }
     {
-      name = "!secret biedronka_name";
-      latitude = "!secret biedronka_latitude";
-      longitude = "!secret biedronka_longitude";
-      radius = "!secret biedronka_radius";
+      name = "!secret zone4_name";
+      latitude = "!secret zone4_latitude";
+      longitude = "!secret zone4_longitude";
+      radius = "!secret zone4_radius";
     }
     {
-      name = "!secret blanpsych_name";
-      latitude = "!secret blanpsych_latitude";
-      longitude = "!secret blanpsych_longitude";
-      radius = "!secret blanpsych_radius";
+      name = "!secret zone5_name";
+      latitude = "!secret zone5_latitude";
+      longitude = "!secret zone5_longitude";
+      radius = "!secret zone5_radius";
     }
     {
-      name = "!secret venus_name";
-      latitude = "!secret venus_latitude";
-      longitude = "!secret venus_longitude";
-      radius = "!secret venus_radius";
+      name = "!secret zone6_name";
+      latitude = "!secret zone6_latitude";
+      longitude = "!secret zone6_longitude";
+      radius = "!secret zone6_radius";
     }
     {
-      name = "!secret prawiedniki_name";
-      latitude = "!secret prawiedniki_latitude";
-      longitude = "!secret prawiedniki_longitude";
-      radius = "!secret prawiedniki_radius";
+      name = "!secret zone7_name";
+      latitude = "!secret zone7_latitude";
+      longitude = "!secret zone7_longitude";
+      radius = "!secret zone7_radius";
     }
     {
-      name = "!secret dominosametyst_name";
-      latitude = "!secret dominosametyst_latitude";
-      longitude = "!secret dominosametyst_longitude";
-      radius = "!secret dominosametyst_radius";
+      name = "!secret zone8_name";
+      latitude = "!secret zone8_latitude";
+      longitude = "!secret zone8_longitude";
+      radius = "!secret zone8_radius";
     }
     {
-      name = "!secret kwarchome_name";
-      latitude = "!secret kwarchome_latitude";
-      longitude = "!secret kwarchome_longitude";
-      radius = "!secret kwarchome_radius";
+      name = "!secret zone9_name";
+      latitude = "!secret zone9_latitude";
+      longitude = "!secret zone9_longitude";
+      radius = "!secret zone9_radius";
     }
     {
-      name = "!secret kostrhome_name";
-      latitude = "!secret kostrhome_latitude";
-      longitude = "!secret kostrhome_longitude";
-      radius = "!secret kostrhome_radius";
+      name = "!secret zone10_name";
+      latitude = "!secret zone10_latitude";
+      longitude = "!secret zone10_longitude";
+      radius = "!secret zone10_radius";
+    }
+    {
+      name = "!secret zone11_name";
+      latitude = "!secret zone11_latitude";
+      longitude = "!secret zone11_longitude";
+      radius = "!secret zone11_radius";
     }
   ];
 }

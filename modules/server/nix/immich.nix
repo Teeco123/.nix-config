@@ -1,10 +1,16 @@
-_: {
+{ config, ... }:
+{
+  sops.secrets = {
+    immich-env = { };
+  };
+
   services.immich = {
     enable = true;
     port = 2283;
     user = "immich";
     host = "::1";
     mediaLocation = "/mnt/md0/immich";
+    secretsFile = config.sops.secrets.immich-env.path;
     openFirewall = true;
     settings = {
       newVersionCheck.enabled = true;
