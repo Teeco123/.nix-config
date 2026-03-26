@@ -118,6 +118,11 @@
           reverse_proxy localhost:5232
         '';
       };
+      "https://odoo.teeco.cc" = {
+        extraConfig = ''
+          reverse_proxy localhost:8069
+        '';
+      };
     };
   };
 }

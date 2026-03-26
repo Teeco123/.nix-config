@@ -106,14 +106,14 @@
 
     customComponents = [
       (pkgs.callPackage ./pkgs/dreame.nix {
-        pillow = pkgs.python313Packages.pillow;
-        numpy = pkgs.python313Packages.numpy;
-        pybase64 = pkgs.python313Packages.pybase64;
-        requests = pkgs.python313Packages.requests;
-        pycryptodome = pkgs.python313Packages.pycryptodome;
-        python-miio = pkgs.python313Packages.python-miio;
-        paho-mqtt = pkgs.python313Packages.paho-mqtt;
-        mini-racer = (pkgs.python313Packages.callPackage ./pkgs/mini-racer.nix { });
+        pillow = pkgs.python314Packages.pillow;
+        numpy = pkgs.python314Packages.numpy;
+        pybase64 = pkgs.python314Packages.pybase64;
+        requests = pkgs.python314Packages.requests;
+        pycryptodome = pkgs.python314Packages.pycryptodome;
+        python-miio = pkgs.python314Packages.python-miio;
+        paho-mqtt = pkgs.python314Packages.paho-mqtt;
+        mini-racer = (pkgs.python314Packages.callPackage ./pkgs/mini-racer.nix { });
       })
     ];
   };

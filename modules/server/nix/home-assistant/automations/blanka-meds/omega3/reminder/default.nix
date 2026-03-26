@@ -1,26 +1,26 @@
 _: {
   services.home-assistant.config.automation = [
     {
-      id = "blanka_brintelix_reminder";
-      alias = "Blanka brintelix reminder";
+      id = "blanka_omega_3_reminder";
+      alias = "Blanka omega 3 reminder";
       mode = "single";
 
       trigger = [
         {
           trigger = "time_pattern";
-          minutes = "/30";
+          hours = "/1";
         }
       ];
 
       condition = [
         {
           condition = "time";
-          after = "07:30:00";
-          before = "12:00:00";
+          after = "12:00:00";
+          before = "18:00:00";
         }
         {
           condition = "state";
-          entity_id = "input_boolean.blanka_brintelix";
+          entity_id = "input_boolean.blanka_omega_3";
           state = [ "off" ];
         }
       ];
@@ -29,13 +29,13 @@ _: {
         {
           action = "notify.mobile_app_blanka_iphone";
           data = {
-            title = "Take your brintelix";
+            title = "Take your omega 3";
             message = "Press and hold to mark as taken";
             data = {
-              tag = "blanka-brintelix-reminder";
+              tag = "blanka-omega-3-reminder";
               actions = [
                 {
-                  action = "brintelix_taken";
+                  action = "omega_3_taken";
                   title = "Pills taken";
                 }
               ];

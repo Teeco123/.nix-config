@@ -25,6 +25,7 @@
     ../../modules/server/nix/dawarich.nix
     ../../modules/server/nix/samba.nix
     ../../modules/server/nix/adguardhome.nix
+    ../../modules/server/nix/odoo.nix
 
     ../../modules/server/nix/arr/bazarr.nix
     ../../modules/server/nix/arr/radarr.nix
@@ -130,24 +131,18 @@
     };
     firewall = {
       allowedTCPPorts = [
-        34629
-        64034
-        45650
-        80
-        443
-        25565
-        5232
-        53
-        9987
-        30033
+        45650 # qbittorrent
+        80 # http
+        443 # https
+        25565 # minecraft
+        53 # dns
       ];
       allowedUDPPorts = [
-        25565
-        45650
-        53
-        67
-        9987
-        30033
+        45650 # qbittorrent
+        443 # https
+        25565 # minecraft
+        53 # dns
+        67 # dhcp
       ];
     };
   };
@@ -169,6 +164,13 @@
       server = {
         isNormalUser = true;
         shell = pkgs.zsh;
+        openssh = {
+          authorizedKeys = {
+            keys = [
+              "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDI/eUChh6jB4vuW71zUBnS7i3hUnQK+AP9IDgs3BVRW macbook"
+            ];
+          };
+        };
         extraGroups = [
           "wheel"
           "docker"
@@ -194,6 +196,13 @@
   services = {
     openssh = {
       enable = true;
+      openFirewall = true;
+      settings = {
+        PasswordAuthentication = false;
+        PermitRootLogin = "no";
+        KbdInteractiveAuthentication = false;
+        AllowUsers = [ "server" ];
+      };
     };
   };
 

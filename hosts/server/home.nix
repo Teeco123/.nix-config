@@ -29,6 +29,8 @@
       wget
       bottom
       javaPackages.compiler.temurin-bin.jre-25
+      python313Packages.phonenumbers
+      python314Packages.phonenumbers
     ];
   };
 
