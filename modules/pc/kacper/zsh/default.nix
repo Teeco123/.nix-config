@@ -9,7 +9,7 @@ _: {
 
     shellAliases = {
       ls = "eza -a";
-      nix-rebuild = "sudo nixos-rebuild switch --flake /home/kacper/.nix-config#macbook && source ~/.zshrc";
+      nix-rebuild = "sudo nixos-rebuild switch --flake /home/kacper/.nix-config#pc && source ~/.zshrc";
       nix-dev = "nix develop --command zsh";
     };
 
