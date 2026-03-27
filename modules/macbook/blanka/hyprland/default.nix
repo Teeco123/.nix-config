@@ -23,7 +23,7 @@
       variables = [ "--all" ];
     };
     plugins = [
-      pkgs.hyprlandPlugins.hyprbars
+      #pkgs.hyprlandPlugins.hyprbars
     ];
     submaps = {
       no-bind = {

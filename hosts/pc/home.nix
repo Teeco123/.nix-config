@@ -8,33 +8,11 @@
   imports = [
     inputs.xremap-flake.homeManagerModules.default
     inputs.nixvim.homeModules.default
-    inputs.vicinae.homeManagerModules.default
+    inputs.noctalia.homeModules.default
+    inputs.sops-nix.homeManagerModules.sops
 
-    ../../modules/home/nvim
-    ../../modules/home/firefox.nix
-    ../../modules/home/waybar.nix
-    ../../modules/home/wofi.nix
-    ../../modules/home/hyprland.nix
-    ../../modules/home/desktop-entries.nix
-    ../../modules/home/zen-browser.nix
-    ../../modules/home/eza.nix
-    ../../modules/home/git.nix
-    ../../modules/home/zsh.nix
-    ../../modules/home/yazi.nix
-    ../../modules/home/wezterm.nix
+    ../../modules/pc/kacper
   ];
-
-  services.vicinae = {
-    enable = true;
-    package = pkgs.vicinae;
-    systemd = {
-      enable = true;
-      autoStart = true;
-      environment = {
-        USE_LAYER_SHELL = 1;
-      };
-    };
-  };
 
   home = {
     username = "kacper";
@@ -62,18 +40,6 @@
   };
 
   services = {
-    hyprpaper = {
-      enable = true;
-      settings = {
-        preload = [ "/home/kacper/.nix-config/wallpapers/zigzag-wave.png" ];
-        wallpaper = [
-          {
-            monitor = "DP-1";
-            path = "/home/kacper/.nix-config/wallpapers/zigzag-wave.png";
-          }
-        ];
-      };
-    };
     xremap = {
       enable = true;
       withWlroots = true;

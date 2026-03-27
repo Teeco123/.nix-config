@@ -8,22 +8,10 @@
   imports = [
     inputs.xremap-flake.homeManagerModules.default
     inputs.nixvim.homeModules.nixvim
-    inputs.vicinae.homeManagerModules.default
     inputs.noctalia.homeModules.default
-    inputs.stylix.homeModules.default
     inputs.sops-nix.homeManagerModules.sops
 
-    ../../modules/macbook/kacper/nvim
-    ../../modules/macbook/kacper/eza
-    ../../modules/macbook/kacper/git
-    ../../modules/macbook/kacper/zsh
-    ../../modules/macbook/kacper/yazi
-    ../../modules/macbook/kacper/wezterm
-    ../../modules/macbook/kacper/hyprland
-    ../../modules/macbook/kacper/zen-browser
-    ../../modules/macbook/kacper/noctalia-shell
-    ../../modules/macbook/kacper/obsidian
-    ../../modules/macbook/kacper/sops
+    ../../modules/macbook/kacper
   ];
 
   home = {
@@ -42,11 +30,6 @@
       age
       sops
     ];
-  };
-
-  stylix = {
-    enable = false;
-    image = ../../wallpapers/sanrio-cinnamoroll.png;
   };
 
   programs.home-manager.enable = true;

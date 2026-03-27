@@ -1,0 +1,7 @@
+_: {
+  wayland.windowManager.hyprland.settings.misc = {
+    force_default_wallpaper = 1;
+    disable_hyprland_logo = true;
+    vfr = true;
+  };
+}

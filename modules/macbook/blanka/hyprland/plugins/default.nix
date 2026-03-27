@@ -1,7 +1,7 @@
 _: {
   wayland.windowManager.hyprland.settings.plugin = {
     hyprbars = {
-      enabled = true;
+      enabled = false;
       bar_title_enabled = false;
       bar_color = "rgb(CFF2F8)";
       hyprbars-button = [
