@@ -1,6 +1,10 @@
 _: {
   nix = {
     settings = {
+      trusted-users = [
+        "root"
+        "kacper"
+      ];
       download-buffer-size = 524288000;
       experimental-features = [
         "nix-command"

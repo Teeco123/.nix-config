@@ -6,6 +6,8 @@
       formatters_by_ft = {
         nix = [ "nixfmt" ];
         css = [ "prettierd" ];
+        rust = [ "rustfmt" ];
+        sql = [ "sql_formatter" ];
       };
       formatters = {
         nixfmt = {
@@ -13,6 +15,12 @@
         };
         prettierd = {
           command = lib.getExe pkgs.prettierd;
+        };
+        rustfmt = {
+          command = lib.getExe pkgs.rustfmt;
+        };
+        sql_formatter = {
+          command = lib.getExe pkgs.sql-formatter;
         };
       };
       format_on_save = ''

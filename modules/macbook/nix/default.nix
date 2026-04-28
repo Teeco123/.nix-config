@@ -13,5 +13,6 @@ _: {
     ./services
     ./networking
     ./environment
+    ./virtualisation
   ];
 }

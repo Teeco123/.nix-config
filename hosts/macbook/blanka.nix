@@ -15,13 +15,11 @@
   home = {
     stateVersion = "25.11";
     packages = with pkgs; [
-      ripgrep
       asahi-audio
       prismlauncher
       obsidian
       unzip
       hyprcursor
-      github-desktop
     ];
   };
 

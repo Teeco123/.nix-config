@@ -5,6 +5,10 @@
   };
 
   networking = {
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [ 3000 ];
+    };
     networkmanager = {
       enable = true;
       wifi = {

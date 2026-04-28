@@ -6,7 +6,10 @@ _: {
       PasswordAuthentication = false;
       PermitRootLogin = "no";
       KbdInteractiveAuthentication = false;
-      AllowUsers = [ "kacper" ];
+      AllowUsers = [
+        "kacper"
+        "root"
+      ];
     };
   };
 }

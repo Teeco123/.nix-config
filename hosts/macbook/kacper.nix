@@ -29,6 +29,10 @@
       gh
       age
       sops
+      rustlings
+      gimp
+      inkscape
+      freecad
     ];
   };
 

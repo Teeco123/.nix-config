@@ -19,6 +19,8 @@
       c
       css
       qmljs
+      rust
+      sql
     ];
   };
 }

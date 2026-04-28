@@ -2,8 +2,8 @@ _: {
   programs.git = {
     enable = true;
     settings = {
-      user.name = "teeco123";
-      user.email = "teeco.dev@proton.me";
+      user.name = "Teeco123";
+      user.email = "dastardly7761@proton.me";
       init.defaultBranch = "main";
       alias = {
         st = "status";

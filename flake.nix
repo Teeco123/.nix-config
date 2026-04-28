@@ -41,14 +41,6 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    deploy-rs = {
-      url = "github:serokell/deploy-rs";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -64,8 +56,6 @@
       vicinae,
       noctalia,
       stylix,
-      disko,
-      deploy-rs,
       ...
     }@inputs:
     {
@@ -128,50 +118,6 @@
               };
             }
           ];
-        };
-        a = nixpkgs.lib.nixosSystem {
-          system = "aarch64-linux";
-          modules = [
-            disko.nixosModules.disko
-            ./hosts/a/configuration.nix
-          ];
-        };
-        b = nixpkgs.lib.nixosSystem {
-          system = "aarch64-linux";
-          modules = [
-            disko.nixosModules.disko
-            ./hosts/b/configuration.nix
-          ];
-        };
-        c = nixpkgs.lib.nixosSystem {
-          system = "aarch64-linux";
-          modules = [
-            disko.nixosModules.disko
-            ./hosts/c/configuration.nix
-          ];
-        };
-      };
-
-      deploy.nodes = {
-        a = {
-          hostname = "192.168.122.10";
-          profiles.system.path = deploy-rs.lib.aarch64-linux.activate.nixos self.nixosConfigurations.a;
-        };
-        b = {
-          hostname = "192.168.122.11";
-          profiles.system.path = deploy-rs.lib.aarch64-linux.activate.nixos self.nixosConfigurations.b;
-        };
-        c = {
-          hostname = "192.168.122.12";
-          profiles.system.path = deploy-rs.lib.aarch64-linux.activate.nixos self.nixosConfigurations.c;
-        };
-        pc = {
-          hostname = "192.168.100.13";
-          remoteBuild = true;
-          profiles.system = {
-            sshUser = "kacper";
-            path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.pc;
-          };
         };
       };
     };
