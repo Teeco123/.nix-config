@@ -2,9 +2,9 @@
   description = "NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager/master";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     apple-silicon = {
@@ -30,17 +30,16 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    vicinae = {
-      url = "github:vicinaehq/vicinae";
-    };
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    stylix = {
-      url = "github:nix-community/stylix";
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
     };
+    steam-asahi.url = "github:sm-idk/steam-asahi";
   };
 
   outputs =
@@ -53,9 +52,9 @@
       zen-browser,
       nixvim,
       sops-nix,
-      vicinae,
       noctalia,
-      stylix,
+      plasma-manager,
+      steam-asahi,
       ...
     }@inputs:
     {
@@ -65,55 +64,56 @@
       };
 
       nixosConfigurations = {
-        pc = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            ./hosts/pc/configuration.nix
-            home-manager.nixosModules.home-manager
-            nur.modules.nixos.default
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                extraSpecialArgs = { inherit inputs; };
-                users.kacper = ./hosts/pc/home.nix;
-              };
-            }
-          ];
-        };
-        server = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            ./hosts/server/configuration.nix
-            home-manager.nixosModules.home-manager
-            nur.modules.nixos.default
-            sops-nix.nixosModules.sops
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                extraSpecialArgs = { inherit inputs; };
-                users.server = ./hosts/server/home.nix;
-              };
-            }
-          ];
-        };
+        #  pc = nixpkgs.lib.nixosSystem {
+        #    system = "x86_64-linux";
+        #    modules = [
+        #      ./hosts/pc/configuration.nix
+        #      home-manager.nixosModules.home-manager
+        #      nur.modules.nixos.default
+        #      {
+        #        home-manager = {
+        #          useGlobalPkgs = true;
+        #          useUserPackages = true;
+        #          extraSpecialArgs = { inherit inputs; };
+        #          users.kacper = ./hosts/pc/home.nix;
+        #        };
+        #      }
+        #    ];
+        #  };
+        #  server = nixpkgs.lib.nixosSystem {
+        #    system = "x86_64-linux";
+        #    modules = [
+        #      ./hosts/server/configuration.nix
+        #      home-manager.nixosModules.home-manager
+        #      nur.modules.nixos.default
+        #      sops-nix.nixosModules.sops
+        #      {
+        #        home-manager = {
+        #          useGlobalPkgs = true;
+        #          useUserPackages = true;
+        #          extraSpecialArgs = { inherit inputs; };
+        #          users.server = ./hosts/server/home.nix;
+        #        };
+        #      }
+        #    ];
+        #  };
         macbook = nixpkgs.lib.nixosSystem {
           system = "aarch64-linux";
           modules = [
-            ./hosts/macbook/configuration.nix
+            ./machines/macbook/configuration.nix
             apple-silicon.nixosModules.default
             home-manager.nixosModules.home-manager
             nur.modules.nixos.default
             sops-nix.nixosModules.sops
+            steam-asahi.nixosModules.default
             {
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = { inherit inputs; };
                 users = {
-                  kacper = ./hosts/macbook/kacper.nix;
-                  blanka = ./hosts/macbook/blanka.nix;
+                  kacper = ./machines/macbook/kacper.nix;
+                  blanka = ./machines/macbook/blanka.nix;
                 };
               };
             }

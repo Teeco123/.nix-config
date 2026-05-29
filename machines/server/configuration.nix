@@ -1,0 +1,189 @@
+{
+  pkgs,
+  ...
+}:
+
+{
+  imports = [
+    ./hardware-configuration.nix
+
+    ../../hosts/server
+  ];
+
+  services.thermald.enable = true;
+
+  powerManagement = {
+    enable = true;
+    cpuFreqGovernor = "powersave";
+    powertop = {
+      enable = true;
+    };
+  };
+
+  systemd.services.jellyfin.environment.LIBVA_DRIVER_NAME = "iHD";
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "iHD";
+  };
+
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-ocl
+      intel-media-driver
+      intel-compute-runtime
+      vpl-gpu-rt
+      libvdpau-va-gl
+    ];
+  };
+
+  nix = {
+    settings = {
+      download-buffer-size = 524288000;
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      substituters = [
+        "https://nix-community.cachix.org"
+      ];
+      trusted-public-keys = [
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      ];
+    };
+  };
+
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+    };
+  };
+
+  boot = {
+    loader = {
+      systemd-boot = {
+        enable = true;
+      };
+      efi = {
+        canTouchEfiVariables = true;
+      };
+    };
+    kernelPackages = pkgs.linuxPackages_latest;
+  };
+
+  fileSystems = {
+    "/mnt/md0" = {
+      device = "/dev/disk/by-uuid/bec2aa45-2f37-4d48-8910-1092ccc0f790";
+      fsType = "ext4";
+    };
+    "/mnt/backup" = {
+      device = "/dev/disk/by-uuid/47349bdf-a2b2-4612-a3b7-831144098ade";
+      fsType = "ext4";
+    };
+  };
+
+  networking = {
+    hostName = "server";
+    networkmanager = {
+      enable = true;
+    };
+    defaultGateway = {
+      address = "192.168.100.1";
+      interface = "enp1s0";
+    };
+    interfaces = {
+      enp1s0 = {
+        ipv4 = {
+          addresses = [
+            {
+              address = "192.168.100.2";
+              prefixLength = 24;
+            }
+          ];
+        };
+      };
+    };
+    firewall = {
+      allowedTCPPorts = [
+        45650 # qbittorrent
+        80 # http
+        443 # https
+        25565 # minecraft
+        53 # dns
+      ];
+      allowedUDPPorts = [
+        45650 # qbittorrent
+        443 # https
+        25565 # minecraft
+        53 # dns
+        67 # dhcp
+      ];
+    };
+  };
+
+  environment = {
+    systemPackages = [ ];
+  };
+
+  time.timeZone = "Europe/Warsaw";
+
+  i18n.defaultLocale = "en_US.UTF-8";
+
+  users = {
+    groups = {
+      media = { };
+      smbusers = { };
+    };
+    users = {
+      server = {
+        isNormalUser = true;
+        shell = pkgs.zsh;
+        openssh = {
+          authorizedKeys = {
+            keys = [
+              "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDI/eUChh6jB4vuW71zUBnS7i3hUnQK+AP9IDgs3BVRW macbook"
+            ];
+          };
+        };
+        extraGroups = [
+          "wheel"
+          "docker"
+        ];
+      };
+      jellyfin = {
+        extraGroups = [
+          "video"
+          "render"
+        ];
+      };
+      kacper = {
+        isNormalUser = true;
+        extraGroups = [ "smbusers" ];
+      };
+      blanka = {
+        isNormalUser = true;
+        extraGroups = [ "smbusers" ];
+      };
+    };
+  };
+
+  services = {
+    openssh = {
+      enable = true;
+      openFirewall = true;
+      settings = {
+        PasswordAuthentication = false;
+        PermitRootLogin = "no";
+        KbdInteractiveAuthentication = false;
+        AllowUsers = [ "server" ];
+      };
+    };
+  };
+
+  programs = {
+    zsh = {
+      enable = true;
+    };
+  };
+
+  system.stateVersion = "25.11"; # Did you read the comment?
+}
