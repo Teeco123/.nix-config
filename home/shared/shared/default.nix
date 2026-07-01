@@ -6,6 +6,5 @@ _: {
     ./yazi
     ./wezterm
     ./obsidian
-    ./zen-browser
   ];
 }

@@ -11,15 +11,6 @@ _: {
         installCargo = true;
         installRustc = true;
       };
-      qmlls = {
-        enable = true;
-        config = {
-          cmd = [
-            "qmlls"
-            "-E"
-          ];
-        };
-      };
     };
   };
 }

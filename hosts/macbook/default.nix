@@ -1,18 +1,11 @@
 _: {
   imports = [
-    ./nix
-    ./boot
-    ./sops
-    ./time
     ./fonts
-    ./users
+    ./nix
     ./nixpkgs
-    ./hardware
-    ./pipewire
     ./programs
     ./services
-    ./networking
-    ./environment
-    ./virtualisation
+    ./time
+    ./users
   ];
 }

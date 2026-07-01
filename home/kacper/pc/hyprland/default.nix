@@ -1,6 +1,8 @@
 _: {
   imports = [
     ./misc
+    ./binds
+    ./animations
     ./input
     ./rules
     ./device

@@ -3,12 +3,13 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nix-darwin = {
+      url = "github:nix-darwin/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-    apple-silicon = {
-      url = "github:nix-community/nixos-apple-silicon";
     };
     nixvim = {
       url = "github:nix-community/nixvim";
@@ -34,27 +35,19 @@
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    plasma-manager = {
-      url = "github:nix-community/plasma-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-    };
-    steam-asahi.url = "github:sm-idk/steam-asahi";
   };
 
   outputs =
     {
       self,
       nixpkgs,
+      nix-darwin,
       home-manager,
-      apple-silicon,
       nur,
       zen-browser,
       nixvim,
       sops-nix,
       noctalia,
-      plasma-manager,
-      steam-asahi,
       ...
     }@inputs:
     {
@@ -97,28 +90,23 @@
         #      }
         #    ];
         #  };
-        macbook = nixpkgs.lib.nixosSystem {
-          system = "aarch64-linux";
-          modules = [
-            ./machines/macbook/configuration.nix
-            apple-silicon.nixosModules.default
-            home-manager.nixosModules.home-manager
-            nur.modules.nixos.default
-            sops-nix.nixosModules.sops
-            steam-asahi.nixosModules.default
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                extraSpecialArgs = { inherit inputs; };
-                users = {
-                  kacper = ./machines/macbook/kacper.nix;
-                  blanka = ./machines/macbook/blanka.nix;
-                };
-              };
-            }
-          ];
-        };
       };
+      darwinConfigurations = {
+      "Kacpers-MacBook-Pro" = nix-darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        modules = [
+          ./machines/macbook/configuration.nix
+          home-manager.darwinModules.home-manager
+	  {
+              home-manager = {
+                  useGlobalPkgs = true;
+                  useUserPackages = true;
+                  extraSpecialArgs = { inherit inputs; };
+                  users.kacper = ./machines/macbook/home.nix;
+             };
+           }
+        ];
+      };
+    };
     };
 }
