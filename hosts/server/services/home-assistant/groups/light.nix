@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   services.home-assistant.config.light = [
     {
       platform = "group";
@@ -24,6 +23,24 @@
       entities = [
         "light.primary_bedroom_led"
       ];
+    }
+    {
+      platform = "group";
+      name = "Corridor lights";
+      unique_id = "corridor_lights";
+      entities = [ ];
+    }
+    {
+      platform = "group";
+      name = "Bathroom lights";
+      unique_id = "bathroom_lights";
+      entities = [ ];
+    }
+    {
+      platform = "group";
+      name = "Living Room lights";
+      unique_id = "living_room_lights";
+      entities = [ ];
     }
   ];
 }

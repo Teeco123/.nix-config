@@ -5,6 +5,7 @@ _: {
     ./nixpkgs
     ./programs
     ./services
+    ./system
     ./time
     ./users
   ];

@@ -1,0 +1,4 @@
+{
+  type = "grid";
+  cards = [ ];
+}

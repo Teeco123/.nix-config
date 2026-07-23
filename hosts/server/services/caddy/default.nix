@@ -21,7 +21,7 @@
     virtualHosts = {
       "(admin)" = {
         extraConfig = ''
-          @not-admin not remote_ip 100.64.0.1 100.64.0.2 100.64.0.3
+          @not-admin not remote_ip 100.64.0.1 100.64.0.2 100.64.0.13
           respond @not-admin "Access Denied Your IP: {client_ip}"
         '';
       };

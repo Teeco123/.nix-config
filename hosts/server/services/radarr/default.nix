@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   services.radarr = {
     enable = true;
@@ -18,6 +18,11 @@
         automatically = false;
         mechanism = "external";
       };
+    };
+  };
+  systemd.services.radarr = {
+    serviceConfig = {
+      UMask = lib.mkforce "0002";
     };
   };
 }

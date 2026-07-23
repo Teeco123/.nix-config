@@ -40,5 +40,26 @@
         bottom = [ ];
       };
     }
+    {
+      type = "custom:bubble-card";
+      card_type = "media-player";
+      entity = "media_player.jellyfin_lg_b5_oled";
+      cover_background = false;
+      tap_action = {
+        action = "more-info";
+      };
+      button_action = {
+        tap_action = {
+          action = "more-info";
+        };
+      };
+      visibility = [
+        {
+          condition = "state";
+          entity = "binary_sensor.tv_source_is_jellyfin";
+          state = "on";
+        }
+      ];
+    }
   ];
 }

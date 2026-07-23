@@ -1,6 +1,5 @@
-{ ... }:
-{
+_: {
   imports = [
-    ./avg-temp-hum.nix
+    ./tv-source
   ];
 }

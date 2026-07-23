@@ -92,21 +92,21 @@
         #  };
       };
       darwinConfigurations = {
-      "Kacpers-MacBook-Pro" = nix-darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        modules = [
-          ./machines/macbook/configuration.nix
-          home-manager.darwinModules.home-manager
-	  {
+        "Kacpers-MacBook-Pro" = nix-darwin.lib.darwinSystem {
+          system = "aarch64-darwin";
+          modules = [
+            ./machines/macbook/configuration.nix
+            home-manager.darwinModules.home-manager
+            {
               home-manager = {
-                  useGlobalPkgs = true;
-                  useUserPackages = true;
-                  extraSpecialArgs = { inherit inputs; };
-                  users.kacper = ./machines/macbook/home.nix;
-             };
-           }
-        ];
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = { inherit inputs; };
+                users.kacper = ./machines/macbook/home.nix;
+              };
+            }
+          ];
+        };
       };
-    };
     };
 }

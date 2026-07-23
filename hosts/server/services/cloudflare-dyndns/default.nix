@@ -13,6 +13,7 @@
       "headscale.teeco.cc"
       "jellyfin.teeco.cc"
       "jellyseerr.teeco.cc"
+      "homeassistant.teeco.cc"
       "pedaliada.teeco.cc"
     ];
     apiTokenFile = config.sops.secrets.cloudflare-dyndns-env.path;

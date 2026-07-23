@@ -1,8 +1,8 @@
 {
   title = "Corridor";
   max_columns = 3;
+  header = import ./header.nix;
   sections = [
-    (import ./separator.nix)
     (import ../section-navbar.nix)
   ];
 }

@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+_: {
   services.qbittorrent = {
     enable = true;
     webuiPort = 8080;
@@ -7,13 +6,10 @@
     user = "qbittorrent";
     group = "media";
     openFirewall = true;
-    serverConfig = {
-      Preferences = {
-        WebUI = {
-          AlternativeUIEnabled = true;
-          RootFolder = "${pkgs.vuetorrent}/share/vuetorrent";
-        };
-      };
+  };
+  systemd.services.qbittorrent = {
+    serviceConfig = {
+      UMask = "0002";
     };
   };
 }

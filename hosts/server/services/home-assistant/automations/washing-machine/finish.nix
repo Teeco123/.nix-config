@@ -1,13 +1,10 @@
-{ ... }:
-
-{
+_: {
   services.home-assistant.config.automation = [
     {
       id = "washing_machine_finish";
       alias = "Washing machine finish washing";
       description = "";
       mode = "single";
-
       trigger = [
         {
           trigger = "state";
@@ -16,7 +13,6 @@
           to = "idle";
         }
       ];
-
       action = [
         {
           action = "input_boolean.turn_on";

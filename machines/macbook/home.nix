@@ -9,10 +9,8 @@
     inputs.nixvim.homeModules.nixvim
     inputs.sops-nix.homeManagerModules.sops
 
-    ../../home/shared/shared
-    ../../home/shared/macbook
-    ../../home/kacper/shared
-    ../../home/kacper/macbook
+    #../../home/macbook
+    ../../home/shared
   ];
 
   home = {

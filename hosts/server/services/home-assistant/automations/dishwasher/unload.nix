@@ -1,13 +1,67 @@
-{ ... }:
-
+_:
+let
+  mkNotifyOption =
+    {
+      name,
+      personId,
+      device,
+      isIos ? false,
+    }:
+    {
+      conditions = [
+        {
+          condition = "and";
+          conditions = [
+            {
+              condition = "state";
+              entity_id = "input_select.dishwasher_unload_person";
+              state = name;
+            }
+            {
+              condition = "state";
+              entity_id = "person.${personId}";
+              state = "home";
+            }
+          ];
+        }
+      ];
+      sequence = [
+        {
+          action = "notify.${device}";
+          data = {
+            title = "Unload dishwasher!";
+            message = "Press and hold to mark dishwasher as unloaded";
+            data = {
+              tag = "unload-dishwasher";
+              actions = [
+                {
+                  action = "dishwasher_unloaded";
+                  title = "Dishwasher unloaded";
+                }
+              ];
+            }
+            // (
+              if isIos then
+                {
+                  push = {
+                    interruption-level = "time-sensitive";
+                  };
+                }
+              else
+                { }
+            );
+          };
+        }
+      ];
+    };
+in
 {
   services.home-assistant.config.automation = [
     {
       id = "unload_dishwasher";
-      alias = "Unload dishwasher";
+      alias = "Dishwasher unload";
       description = "";
       mode = "single";
-
       trigger = [
         {
           trigger = "state";
@@ -38,66 +92,10 @@
           ];
         }
       ];
-
       action = [
         {
           choose =
-            let
-              mkNotifyOption =
-                {
-                  name,
-                  personId,
-                  device,
-                  isIos ? false,
-                }:
-                {
-                  conditions = [
-                    {
-                      condition = "and";
-                      conditions = [
-                        {
-                          condition = "state";
-                          entity_id = "input_select.dishwasher_unload_person";
-                          state = name;
-                        }
-                        {
-                          condition = "state";
-                          entity_id = "person.${personId}";
-                          state = "home";
-                        }
-                      ];
-                    }
-                  ];
-                  sequence = [
-                    {
-                      action = "notify.${device}";
-                      data = {
-                        title = "Unload dishwasher!";
-                        message = "Press and hold to mark dishwasher as unloaded";
-                        data = {
-                          tag = "unload-dishwasher";
-                          actions = [
-                            {
-                              action = "dishwasher_unloaded";
-                              title = "Dishwasher unloaded";
-                            }
-                          ];
-                        }
-                        // (
-                          if isIos then
-                            {
-                              push = {
-                                interruption-level = "time-sensitive";
-                              };
-                            }
-                          else
-                            { }
-                        );
-                      };
-                    }
-                  ];
-                };
-            in
+
             [
               (mkNotifyOption {
                 name = "Kacper";
@@ -118,7 +116,6 @@
                 isIos = false;
               })
             ];
-
           default = [
             { stop = ""; }
           ];

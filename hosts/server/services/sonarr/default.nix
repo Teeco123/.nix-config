@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   services.sonarr = {
     enable = true;
@@ -18,6 +18,11 @@
         automatically = false;
         mechanism = "external";
       };
+    };
+  };
+  systemd.services.sonarr = {
+    serviceConfig = {
+      UMask = lib.mkforce "0002";
     };
   };
 }

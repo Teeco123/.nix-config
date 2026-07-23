@@ -1,10 +1,7 @@
-{ pkgs, ... }:
-{
-  services.jellyseerr = {
+_: {
+  services.seerr = {
     enable = true;
-    package = pkgs.jellyseerr;
     port = 5055;
     openFirewall = true;
-    configDir = "/var/lib/jellyseerr/config";
   };
 }

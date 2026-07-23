@@ -29,6 +29,11 @@
         temperature_unit = "C";
         time_zone = "Europe/Warsaw";
         unit_system = "metric";
+        auth_mfa_modules = [
+          {
+            type = "totp";
+          }
+        ];
       };
 
       http = lib.mkForce {
@@ -65,7 +70,21 @@
           };
         };
       };
-
+      panel_custom = [
+        {
+          name = "material-you-panel";
+          url_path = "material-you-configuration";
+          sidebar_title = "Material you";
+          sidebar_icon = "mdi:meterial-design";
+          module_url = "loca/nixos-lovelace-modules/material-you-utilities.min.js";
+        }
+      ];
+      frontend = {
+        themes = "!include_dir_merge_named themes";
+        extra_module_url = [
+          "/lovelace/nixos-lovelace-modules/material-you-utilities.min.js"
+        ];
+      };
       "script ui" = "!include scripts.yaml";
       "automation ui" = "!include automations.yaml";
       "scene ui" = "!include scenes.yaml";
@@ -92,16 +111,19 @@
       "isal"
       "webostv"
       "zha"
-      "mealie"
-      "local_calendar"
       "open_meteo"
       "wake_on_lan"
+      "jellyfin"
+      "tailscale"
     ];
 
     customLovelaceModules = with pkgs.home-assistant-custom-lovelace-modules; [
       bubble-card
       navbar-card
       kiosk-mode
+      mushroom
+      material-you-utilities
+      mini-graph-card
     ];
 
     customComponents = [

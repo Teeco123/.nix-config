@@ -1,9 +1,8 @@
-{ ... }:
-{
+_: {
   services.home-assistant.config.automation = [
     {
       id = "dishwasher_finish";
-      alias = "Dishwasher finish washing";
+      alias = "Dishwasher finish";
       description = "";
       mode = "single";
       trigger = [

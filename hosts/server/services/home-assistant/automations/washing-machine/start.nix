@@ -1,6 +1,4 @@
-{ ... }:
-
-{
+_: {
   services.home-assistant.config.automation = [
     {
       id = "start_washing_machine";

@@ -6,7 +6,6 @@ let
     leszek = "846b57bc91894f82baed820bd37ee75b";
     wioleta = "5467b7c95b9a4ba3b28f9d0f4f0db072";
   };
-
   mkPerson =
     {
       person,
@@ -21,14 +20,12 @@ let
       entity = person;
       show_last_changed = true;
       button_action = { };
-
       visibility = [
         {
           condition = "user";
           users = visibleTo;
         }
       ];
-
       sub_button = {
         main = [
           {
@@ -41,16 +38,6 @@ let
             content_layout = "icon-left";
             hide_when_parent_unavailable = false;
             name = "Battery";
-          }
-          {
-            entity = distance;
-            show_name = false;
-            show_state = true;
-            show_icon = true;
-            icon = "mdi:map-marker-distance";
-            show_attribute = false;
-            show_last_updated = false;
-            show_last_changed = false;
           }
         ];
         bottom = [ ];

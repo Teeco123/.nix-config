@@ -1,13 +1,10 @@
-{ ... }:
-
-{
+_: {
   services.home-assistant.config.automation = [
     {
       id = "washing_machine_unloaded";
       alias = "Washing machine unloaded";
       description = "";
       mode = "single";
-
       trigger = [
         {
           trigger = "event";
@@ -17,7 +14,6 @@
           };
         }
       ];
-
       action = [
         {
           action = "input_boolean.turn_off";

@@ -1,13 +1,10 @@
-{ ... }:
-
-{
+_: {
   services.home-assistant.config.automation = [
     {
       id = "unload_washing_machine";
       alias = "Unload washing machine";
       description = "";
       mode = "single";
-
       trigger = [
         {
           trigger = "state";
@@ -20,7 +17,6 @@
           minutes = "/10";
         }
       ];
-
       condition = [
         {
           condition = "and";
@@ -38,7 +34,6 @@
           ];
         }
       ];
-
       action = [
         {
           choose = [
