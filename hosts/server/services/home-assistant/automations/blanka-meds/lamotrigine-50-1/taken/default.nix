@@ -1,8 +1,8 @@
 _: {
   services.home-assistant.config.automation = [
     {
-      id = "blanka_brintelix_taken";
-      alias = "Blanka brintelix taken";
+      id = "blanka_lamotrigine_50_1_taken";
+      alias = "Blanka lamotrigine 50mg 1 taken";
       mode = "single";
 
       trigger = [
@@ -10,7 +10,7 @@ _: {
           trigger = "event";
           event_type = "mobile_app_notification_action";
           event_data = {
-            action = "brintelix_taken";
+            action = "lamotrigine_50_1_taken";
           };
           context = {
             user_id = [
@@ -24,7 +24,7 @@ _: {
         {
           action = "input_boolean.turn_on";
           target = {
-            entity_id = "input_boolean.blanka_brintelix";
+            entity_id = "input_boolean.blanka_lamotrigine_50_1";
           };
         }
       ];

@@ -17,10 +17,9 @@ _: {
           action = "input_boolean.turn_off";
           target = {
             entity_id = [
-              "input_boolean.blanka_magnesium"
-              "input_boolean.blanka_omega_3_vitamin_d"
-              "input_boolean.blanka_brintelix"
-              "input_boolean.blanka_dutilox"
+              "input_boolean.blanka_lamotrigine_50_1"
+              "input_boolean.blanka_lamotrigine_50_2"
+              "input_boolean.blanka_lamotrigine_100_3"
             ];
           };
         }
