@@ -10,8 +10,8 @@
     inputs.nixvim.homeModules.nixvim
     inputs.sops-nix.homeManagerModules.sops
 
-    ../../home/shared/shared
-    ../../home/server/shared
+    ../../home/server
+    ../../home/shared
   ];
 
   home = {

@@ -22,7 +22,7 @@
   };
   systemd.services.sonarr = {
     serviceConfig = {
-      UMask = lib.mkforce "0002";
+      UMask = lib.mkForce "0002";
     };
   };
 }

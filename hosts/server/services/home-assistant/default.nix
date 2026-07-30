@@ -6,6 +6,8 @@
     ./templates
     ./groups
     ./automations
+    ./integrations
+    ./helpers
   ];
 
   sops.secrets = {
@@ -76,7 +78,7 @@
           url_path = "material-you-configuration";
           sidebar_title = "Material you";
           sidebar_icon = "mdi:meterial-design";
-          module_url = "loca/nixos-lovelace-modules/material-you-utilities.min.js";
+          module_url = "local/nixos-lovelace-modules/material-you-utilities.min.js";
         }
       ];
       frontend = {

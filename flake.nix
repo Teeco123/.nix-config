@@ -73,23 +73,23 @@
         #      }
         #    ];
         #  };
-        #  server = nixpkgs.lib.nixosSystem {
-        #    system = "x86_64-linux";
-        #    modules = [
-        #      ./hosts/server/configuration.nix
-        #      home-manager.nixosModules.home-manager
-        #      nur.modules.nixos.default
-        #      sops-nix.nixosModules.sops
-        #      {
-        #        home-manager = {
-        #          useGlobalPkgs = true;
-        #          useUserPackages = true;
-        #          extraSpecialArgs = { inherit inputs; };
-        #          users.server = ./hosts/server/home.nix;
-        #        };
-        #      }
-        #    ];
-        #  };
+        server = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./machines/server/configuration.nix
+            home-manager.nixosModules.home-manager
+            nur.modules.nixos.default
+            sops-nix.nixosModules.sops
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = { inherit inputs; };
+                users.server = ./machines/server/home.nix;
+              };
+            }
+          ];
+        };
       };
       darwinConfigurations = {
         "Kacpers-MacBook-Pro" = nix-darwin.lib.darwinSystem {

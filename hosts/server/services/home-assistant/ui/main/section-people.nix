@@ -91,7 +91,7 @@ in
 
     (mkPerson {
       person = "person.leszek";
-      battery = "sensor.leszek_samsung_battery_level";
+      battery = "sensor.leszek_iphone_battery_level";
       distance = "sensor.rycerska_5_leszek_distance";
       visibleTo = [
         ids.kacper

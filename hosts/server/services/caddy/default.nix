@@ -11,7 +11,7 @@
     enable = true;
     package = pkgs.caddy.withPlugins {
       plugins = [ "github.com/caddy-dns/cloudflare@v0.2.3" ];
-      hash = "sha256-bL1cpMvDogD/pdVxGA8CAMEXazWpFDBiGBxG83SmXLA=";
+      hash = "sha256-peY/XG37RC0e7FafJ3qNk53srtXZagxN/Hfexcc2TMM=";
     };
 
     globalConfig = ''
@@ -21,7 +21,7 @@
     virtualHosts = {
       "(admin)" = {
         extraConfig = ''
-          @not-admin not remote_ip 100.64.0.1 100.64.0.2 100.64.0.13
+          @not-admin not remote_ip 100.64.0.1 100.64.0.14 100.64.0.15 100.64.0.10
           respond @not-admin "Access Denied Your IP: {client_ip}"
         '';
       };
@@ -72,12 +72,6 @@
         extraConfig = ''
           import admin
           reverse_proxy localhost:${toString config.services.bazarr.listenPort}
-        '';
-      };
-      "https://uptime-kuma.teeco.cc" = {
-        extraConfig = ''
-          import admin
-          reverse_proxy localhost:${toString config.services.uptime-kuma.settings.PORT}
         '';
       };
       "https://adguard.teeco.cc" = {

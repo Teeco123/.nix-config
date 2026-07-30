@@ -1,4 +1,5 @@
-_: {
+{ lib, ... }:
+{
   services.qbittorrent = {
     enable = true;
     webuiPort = 8080;
@@ -9,7 +10,7 @@ _: {
   };
   systemd.services.qbittorrent = {
     serviceConfig = {
-      UMask = "0002";
+      UMask = lib.mkForce "0002";
     };
   };
 }
