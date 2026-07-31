@@ -1,3 +1,58 @@
+{ lib, ... }:
+let
+  trackedZones = [
+    {
+      person = "person.blanka";
+      zone = "zone.home";
+    }
+    {
+      person = "person.blanka";
+      zone = "zone.neuropsychiatric_hospital";
+    }
+    {
+      person = "person.blanka";
+      zone = "zone.find_beauty";
+    }
+    {
+      person = "person.blanka";
+      zone = "zone.prawiedniki_197b";
+    }
+    {
+      person = "person.blanka";
+      zone = "zone.herbowa_8";
+    }
+    {
+      person = "person.eryk";
+      zone = "zone.home";
+    }
+    {
+      person = "person.leszek";
+      zone = "zone.home";
+    }
+    {
+      person = "person.leszek";
+      zone = "zone.kolano_105";
+    }
+    {
+      person = "person.wioleta";
+      zone = "zone.home";
+    }
+  ];
+  makeTriggers =
+    {
+      person,
+      zone,
+      events ? [
+        "enter"
+        "leave"
+      ],
+    }:
+    map (event: {
+      platform = "zone";
+      entity_id = person;
+      inherit zone event;
+    }) events;
+in
 {
   services.home-assistant.config.automation = [
     {
@@ -5,50 +60,7 @@
       alias = "Zone notify kacper";
       mode = "parallel";
       max = 10;
-      trigger = [
-        {
-          platform = "zone";
-          entity_id = "person.blanka";
-          zone = "zone.home";
-          event = "enter";
-        }
-        {
-          platform = "zone";
-          entity_id = "person.blanka";
-          zone = "zone.home";
-          event = "leave";
-        }
-        {
-          platform = "zone";
-          entity_id = "person.blanka";
-          zone = "zone.blanka_psychologist";
-          event = "enter";
-        }
-        {
-          platform = "zone";
-          entity_id = "person.blanka";
-          zone = "zone.blanka_psychologist";
-          event = "leave";
-        }
-        {
-          platform = "zone";
-          entity_id = "person.leszek";
-          zone = "zone.kolano_105";
-          event = "enter";
-        }
-        {
-          platform = "zone";
-          entity_id = "person.leszek";
-          zone = "zone.kolano_105";
-          event = "leave";
-        }
-        {
-          platform = "zone";
-          entity_id = "person.eryk";
-          zone = "zone.home";
-          event = "enter";
-        }
-      ];
+      trigger = lib.concatMap makeTriggers trackedZones;
       condition = [ ];
       action = [
         {
