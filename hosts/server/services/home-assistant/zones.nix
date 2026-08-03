@@ -4,5 +4,5 @@
     latitude = "!secret zone${toString i}_latitude";
     longitude = "!secret zone${toString i}_longitude";
     radius = "!secret zone${toString i}_radius";
-  }) (lib.range 2 12);
+  }) (lib.range 2 13);
 }
