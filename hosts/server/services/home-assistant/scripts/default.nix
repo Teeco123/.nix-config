@@ -1,6 +1,5 @@
-{ ... }:
-{
+_: {
   imports = [
-    ./vacuum-run.nix
+    ./vacuum-run
   ];
 }

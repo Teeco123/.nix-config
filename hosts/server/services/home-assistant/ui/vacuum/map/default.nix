@@ -4,8 +4,8 @@
   cards = [
     {
       type = "picture-entity";
-      entity = "vacuum.roberta";
-      camera_image = "camera.roberta_map";
+      entity = "vacuum.szon_szon";
+      camera_image = "camera.szon_map";
       show_state = false;
       show_name = false;
       camera_view = "auto";

@@ -23,24 +23,16 @@ _: {
       ];
       action = [
         {
-          action = "script.vacuum_run";
-          data = {
-            vacuum_mode = "Vacuum";
-            vacuum_room = "Corridor";
+          action = "dreame_vacuum.vacuum_clean_segment";
+          target = {
+            entity_id = "vacuum.szon_szon";
           };
-        }
-        {
-          action = "script.vacuum_run";
           data = {
-            vacuum_mode = "Vacuum";
-            vacuum_room = "Living Room";
-          };
-        }
-        {
-          action = "script.vacuum_run";
-          data = {
-            vacuum_mode = "Vacuum";
-            vacuum_room = "Kitchen";
+            segments = [
+              3
+              6
+              1
+            ];
           };
         }
         {

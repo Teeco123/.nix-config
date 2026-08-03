@@ -99,7 +99,7 @@
       };
       views = [
         (import ./ui/main/view.nix)
-        (import ./ui/vacuum/view.nix)
+        (import ./ui/vacuum)
         (import ./ui/living-room/view.nix)
         (import ./ui/kitchen/view.nix)
         (import ./ui/corridor/view.nix)

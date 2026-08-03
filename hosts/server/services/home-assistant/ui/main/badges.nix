@@ -4,7 +4,7 @@
     show_name = true;
     show_state = true;
     show_icon = true;
-    entity = "vacuum.roberta";
+    entity = "vacuum.szon_szon";
     show_entity_picture = false;
   }
   {
