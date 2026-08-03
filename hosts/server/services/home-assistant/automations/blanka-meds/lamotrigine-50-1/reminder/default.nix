@@ -16,7 +16,7 @@ _: {
         {
           condition = "time";
           after = "08:00:00";
-          before = "09:00:00";
+          before = "10:00:00";
         }
         {
           condition = "state";
