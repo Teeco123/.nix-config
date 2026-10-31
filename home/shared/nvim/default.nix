@@ -17,6 +17,7 @@
   ];
   programs.nixvim = {
     enable = true;
+    nixpkgs.useGlobalPackages = true;
     extraPlugins = [ pkgs.vimPlugins.plenary-nvim ];
   };
 }
