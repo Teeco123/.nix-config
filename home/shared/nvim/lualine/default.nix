@@ -24,16 +24,19 @@ _: {
         lualine_b = [
           {
             __unkeyed-1 = "cwd";
-            __unkeyed-2 = ''
-              fmt = function()
-              							local cwd = vim.fn.getcwd()
-              							local last_dir = cwd:match("([^/\\]+)$")
-              							return last_dir
-              							end'';
+            fmt.__raw = ''
+              function()
+                local cwd = vim.fn.getcwd()
+                local last_dir = cwd:match("([^/\\]+)$")
+                return last_dir
+              end
+            '';
           }
           {
             __unkeyed-1 = "filename";
-            __unkeyed-2 = "branch";
+          }
+          {
+            __unkeyed-1 = "branch";
           }
         ];
         lualine_c = [
@@ -53,7 +56,11 @@ _: {
           }
         ];
         lualine_y = [ "location" ];
-        lualine_z = [ "os.date('%I:%M %p')" ];
+        lualine_z = [
+          {
+            __raw = "function() return os.date('%I:%M %p') end";
+          }
+        ];
       };
     };
   };

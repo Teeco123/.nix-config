@@ -5,5 +5,6 @@ _: {
     ./finder
     ./menuextraclock
     ./nsglobaldomain
+    ./screencapture
   ];
 }

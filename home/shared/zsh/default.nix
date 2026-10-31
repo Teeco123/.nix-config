@@ -9,7 +9,6 @@ _: {
 
     shellAliases = {
       ls = "eza -a";
-      nix-rebuild = "sudo nixos-rebuild switch --flake /home/kacper/.nix-config#macbook && source ~/.zshrc";
       nix-dev = "nix develop --command zsh";
     };
 
@@ -101,7 +100,7 @@ _: {
     };
 
     profileExtra = ''
-      if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
+      if [[ "$(uname)" == "Linux" ]] && [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
        	if [ "$USER" = "blanka" ]; then
           exec startplasma-wayland
         elif [ "$USER" = "kacper" ]; then
@@ -113,34 +112,41 @@ _: {
     '';
 
     initContent = ''
-      		            git_branch_name() {
-                    branch=$(git symbolic-ref HEAD 2> /dev/null | awk -F'/' '{print $NF}')
+      git_branch_name() {
+        branch=$(git symbolic-ref HEAD 2> /dev/null | awk -F'/' '{print $NF}')
 
-                    if [[ -n "$branch" ]]; then
-                      git_changes=$(git status --porcelain 2>/dev/null)
+        if [[ -n "$branch" ]]; then
+          git_changes=$(git status --porcelain 2>/dev/null)
 
-                      dirty=""
-                      staged=""
-                      untracked=""
+          dirty=""
+          staged=""
+          untracked=""
 
-                      [[ $(echo "$git_changes" | grep "^.M") ]] && dirty="*"
-                      [[ $(echo "$git_changes" | grep "^A") ]] && staged="+"
-                      [[ $(echo "$git_changes" | grep "^??") ]] && untracked="#"
+          [[ $(echo "$git_changes" | grep "^.M") ]] && dirty="*"
+          [[ $(echo "$git_changes" | grep "^A") ]] && staged="+"
+          [[ $(echo "$git_changes" | grep "^??") ]] && untracked="#"
 
-                      git_status_indicator="$dirty$staged$untracked"
-                      echo " %F{#83B6FF}git:%f%F{#FF7070}($branch%F{#FFE0A8}$git_status_indicator%F{#FF7070})%f"
-                    fi
-                  }
+          git_status_indicator="$dirty$staged$untracked"
+          echo " %F{#83B6FF}git:%f%F{#FF7070}($branch%F{#FFE0A8}$git_status_indicator%F{#FF7070})%f"
+        fi
+      }
 
-                  setopt prompt_subst
+      nix-rebuild() {
+        if [[ "$(uname)" == "Darwin" ]]; then
+          darwin-rebuild switch --flake ~/.nix-config#Kacpers-MacBook-Pro "$@"
+        else
+          local host="''${HOST:-$(hostname)}"
+          sudo nixos-rebuild switch --flake ~/.nix-config#"$host" "$@"
+        fi
+      }
 
+      setopt prompt_subst
 
-            			if [[ -n $IN_NIX_SHELL ]]; then
-                  	prompt='%F{#B6DAFF}󱄅 %f %F{#FFFFFF}%1/%f$(git_branch_name) %F{yellow}~%f '
-            			else
-                  	prompt='%F{#FFFFFF}%1/%f$(git_branch_name) %F{yellow}~%f '
-            			fi
-
-      						'';
+      if [[ -n $IN_NIX_SHELL ]]; then
+        prompt='%F{#B6DAFF}󱄅 %f %F{#FFFFFF}%1/%f$(git_branch_name) %F{yellow}~%f '
+      else
+        prompt='%F{#FFFFFF}%1/%f$(git_branch_name) %F{yellow}~%f '
+      fi
+    '';
   };
 }

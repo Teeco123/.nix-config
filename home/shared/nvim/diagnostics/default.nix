@@ -5,7 +5,7 @@ _: {
       signs = false;
       underline = true;
       update_in_insert = false;
-      sverity_sort = true;
+      severity_sort = true;
     };
   };
 }
