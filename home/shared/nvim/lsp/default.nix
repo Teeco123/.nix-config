@@ -12,6 +12,9 @@ _: {
         installCargo = true;
         installRustc = true;
       };
+      svelte.enable = true;
+      ts_ls.enable = true;
+      html.enable = true;
     };
   };
 }

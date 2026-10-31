@@ -6,6 +6,10 @@
       formatters_by_ft = {
         nix = [ "nixfmt" ];
         css = [ "prettierd" ];
+        typescript = [ "prettierd" ];
+        javascript = [ "prettierd" ];
+        html = [ "prettierd" ];
+        svelte = [ "prettierd" ];
         rust = [ "rustfmt" ];
         sql = [ "sql_formatter" ];
         swift = [ "swift-format" ];

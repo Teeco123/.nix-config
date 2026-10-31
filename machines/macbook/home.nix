@@ -18,6 +18,7 @@
     username = "kacper";
     homeDirectory = "/Users/kacper";
     packages = with pkgs; [
+      swiftformat
     ];
   };
 

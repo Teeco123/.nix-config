@@ -22,6 +22,10 @@
       rust
       sql
       swift
+      svelte
+      typescript
+      javascript
+      html
     ];
   };
 }
