@@ -42,7 +42,11 @@ _: {
         "cmd-shift-8" = "move-node-to-workspace 8";
         "cmd-shift-9" = "move-node-to-workspace 9";
 
-        # Focus windows (Vim keys: Alt + Cmd + H/J/K/L)
+        # Focus windows (Cmd + H/L and Alt + Cmd + H/J/K/L)
+        "cmd-h" = "focus left";
+        "cmd-l" = "focus right";
+        "cmd-j" = "focus down";
+        "cmd-k" = "focus up";
         "alt-cmd-h" = "focus left";
         "alt-cmd-j" = "focus down";
         "alt-cmd-k" = "focus up";
