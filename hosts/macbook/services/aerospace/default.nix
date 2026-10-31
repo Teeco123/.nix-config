@@ -6,17 +6,17 @@ _: {
       enable-normalization-flatten-containers = true;
       enable-normalization-opposite-orientation-for-nested-containers = true;
 
-      accordion-padding = 30;
+      accordion-padding = 0;
       default-root-container-layout = "tiles";
       default-root-container-orientation = "auto";
 
       gaps = {
-        inner.horizontal = 8;
-        inner.vertical = 8;
-        outer.left = 8;
-        outer.bottom = 8;
-        outer.top = 8;
-        outer.right = 8;
+        inner.horizontal = 0;
+        inner.vertical = 0;
+        outer.left = 0;
+        outer.bottom = 0;
+        outer.top = 0;
+        outer.right = 0;
       };
 
       mode.main.binding = {
