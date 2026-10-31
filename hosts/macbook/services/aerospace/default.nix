@@ -99,7 +99,7 @@ _: {
           run = "move-node-to-workspace 1";
         }
 
-        # --- Workspace 2: Terminal & Code ---
+        # --- Workspace 2: WezTerm ---
         {
           "if".app-id = "com.github.wez.wezterm";
           run = "move-node-to-workspace 2";
@@ -108,69 +108,71 @@ _: {
           "if".app-id = "com.apple.dt.Xcode";
           run = "move-node-to-workspace 2";
         }
+
+        # --- Workspace 3: Antigravity ---
         {
           "if".app-id = "com.google.antigravity";
-          run = "move-node-to-workspace 2";
+          run = "move-node-to-workspace 3";
         }
 
-        # --- Workspace 3: Notes & Database ---
+        # --- Workspace 4: Notes & Database ---
         {
           "if".app-id = "md.obsidian";
-          run = "move-node-to-workspace 3";
+          run = "move-node-to-workspace 4";
         }
         {
           "if".app-id = "io.beekeeperstudio.desktop";
-          run = "move-node-to-workspace 3";
+          run = "move-node-to-workspace 4";
         }
 
-        # --- Workspace 4: Communication ---
+        # --- Workspace 5: Communication ---
         {
           "if".app-id = "com.hnc.Discord";
-          run = "move-node-to-workspace 4";
+          run = "move-node-to-workspace 5";
         }
         {
           "if".app-id = "com.microsoft.teams2";
-          run = "move-node-to-workspace 4";
+          run = "move-node-to-workspace 5";
         }
         {
           "if".app-id = "com.apple.MobileSMS";
-          run = "move-node-to-workspace 4";
+          run = "move-node-to-workspace 5";
         }
         {
           "if".app-id = "com.tencent.xinWeChat";
-          run = "move-node-to-workspace 4";
+          run = "move-node-to-workspace 5";
         }
 
-        # --- Workspace 5: Media & Production ---
+        # --- Workspace 6: Media & Production ---
         {
           "if".app-id = "com.apple.Music";
-          run = "move-node-to-workspace 5";
+          run = "move-node-to-workspace 6";
         }
         {
           "if".app-id = "com.colliderli.iina";
-          run = "move-node-to-workspace 5";
+          run = "move-node-to-workspace 6";
         }
         {
           "if".app-id = "com.apple.logic10";
-          run = "move-node-to-workspace 5";
+          run = "move-node-to-workspace 6";
         }
         {
           "if".app-id = "org.qbittorrent.qBittorrent";
-          run = "move-node-to-workspace 5";
+          run = "move-node-to-workspace 6";
         }
 
-        # --- Workspace 6: Gaming & Virtualization ---
+        # --- Workspace 7: Gaming & Virtualization ---
         {
           "if".app-id = "com.valvesoftware.steam";
-          run = "move-node-to-workspace 6";
+          run = "move-node-to-workspace 7";
         }
         {
           "if".app-id = "com.moonlight-stream.Moonlight";
-          run = "move-node-to-workspace 6";
+          run = "move-node-to-workspace 7";
         }
         {
           "if".app-id = "com.utmapp.UTM";
-          run = "move-node-to-workspace 6";
+          run = "move-node-to-workspace 7";
         }
 
         # --- Floating Dialogs & Utilities ---
