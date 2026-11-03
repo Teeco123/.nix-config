@@ -104,7 +104,7 @@ _: {
        	if [ "$USER" = "blanka" ]; then
           exec startplasma-wayland
         elif [ "$USER" = "kacper" ]; then
-          exec start-hyprland
+          exec Hyprland
         else
           exec startplasma-wayland
         fi

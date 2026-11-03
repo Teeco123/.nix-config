@@ -2,6 +2,8 @@ _: {
   wayland.windowManager.hyprland.settings = {
     bind = [
       "SUPER_R, Delete, submap, no-bind"
+      "$mainMod, Return, exec, wezterm"
+      "$mainMod, Space, exec, $ns-ipc launcher toggle"
       "$mainMod SHIFT, 1, movetoworkspace, 1"
       "$mainMod SHIFT, 2, movetoworkspace, 2"
       "$mainMod SHIFT, 3, movetoworkspace, 3"

@@ -3,5 +3,6 @@ _: {
     ./zsh
     ./steam
     ./gamescope
+    ./hyprland
   ];
 }

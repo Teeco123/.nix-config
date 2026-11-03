@@ -25,6 +25,7 @@
       extraGroups = [
         "wheel"
         "input"
+        "uinput"
       ];
     };
     blanka = {
@@ -33,7 +34,10 @@
       extraGroups = [
         "wheel"
         "input"
+        "uinput"
       ];
     };
   };
+
+  hardware.uinput.enable = true;
 }
