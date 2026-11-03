@@ -1,6 +1,6 @@
 _: {
   networking = {
-    hostName = "nixos";
+    hostName = "pc";
     firewall = {
       allowedTCPPorts = [ ];
       allowedUDPPorts = [ ];

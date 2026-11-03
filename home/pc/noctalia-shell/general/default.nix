@@ -1,5 +1,5 @@
 _: {
-  programs.noctalia-shell.settings.general = {
+  programs.noctalia.settings.general = {
     avatarImage = "/home/kacper/.face";
     dimmerOpacity = 0;
     showScreenCorners = true;

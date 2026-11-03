@@ -16,7 +16,7 @@
     ./control-center
   ];
 
-  programs.noctalia-shell = {
+  programs.noctalia = {
     enable = true;
     settings.settingsVersion = 53;
   };

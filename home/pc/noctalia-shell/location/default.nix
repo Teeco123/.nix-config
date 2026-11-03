@@ -1,5 +1,5 @@
 _: {
-  programs.noctalia-shell.settings.location = {
+  programs.noctalia.settings.location = {
     name = "Lublin, Poland";
     weatherEnabled = true;
     weatherShowEffects = true;

@@ -1,5 +1,5 @@
 _: {
-  programs.noctalia-shell = {
+  programs.noctalia.settings = {
     plugins = {
       sources = [
         {

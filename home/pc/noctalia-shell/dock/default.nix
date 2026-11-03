@@ -1,5 +1,5 @@
 _: {
-  programs.noctalia-shell.settings.dock = {
+  programs.noctalia.settings.dock = {
     enabled = false;
   };
 }

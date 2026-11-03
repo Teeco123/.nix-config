@@ -7,14 +7,12 @@
 {
   imports = [
     inputs.xremap-flake.homeManagerModules.default
-    inputs.nixvim.homeModules.default
+    inputs.nixvim.homeModules.nixvim
     inputs.noctalia.homeModules.default
     inputs.sops-nix.homeManagerModules.sops
 
-    ../../home/shared/shared
-    ../../home/shared/pc
-    ../../home/kacper/shared
-    ../../home/kacper/pc
+    ../../home/shared
+    ../../home/pc
   ];
 
   home = {
@@ -45,7 +43,7 @@
   services = {
     xremap = {
       enable = true;
-      withWlroots = true;
+      withHypr = true;
       config.keymap = [
         {
           name = "copy, paste, select all";

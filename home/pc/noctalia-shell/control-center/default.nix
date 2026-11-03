@@ -1,5 +1,5 @@
 _: {
-  programs.noctalia-shell.settings.controlCenter = {
+  programs.noctalia.settings.controlCenter = {
     position = "close_to_bar_button";
     diskPath = "/";
     shortcuts = {

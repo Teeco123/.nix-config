@@ -1,5 +1,5 @@
 _: {
-  programs.noctalia-shell.settings.wallpaper = {
+  programs.noctalia.settings.wallpaper = {
     enabled = true;
     overviewEnabled = false;
     directory = "/home/kacper/.nix-config/wallpapers/";

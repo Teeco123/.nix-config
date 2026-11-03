@@ -1,5 +1,5 @@
 _: {
-  programs.noctalia-shell.settings.colorSchemes = {
+  programs.noctalia.settings.colorSchemes = {
     useWallpaperColors = true;
     predefinedScheme = "Noctalia (default)";
     darkMode = false;

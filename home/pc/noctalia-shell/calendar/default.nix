@@ -1,5 +1,5 @@
 _: {
-  programs.noctalia-shell.settings.calendar = {
+  programs.noctalia.settings.calendar = {
     cards = [
       {
         enabled = true;

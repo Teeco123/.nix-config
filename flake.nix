@@ -58,22 +58,22 @@
       };
 
       nixosConfigurations = {
-        #  pc = nixpkgs.lib.nixosSystem {
-        #    system = "x86_64-linux";
-        #    modules = [
-        #      ./hosts/pc/configuration.nix
-        #      home-manager.nixosModules.home-manager
-        #      nur.modules.nixos.default
-        #      {
-        #        home-manager = {
-        #          useGlobalPkgs = true;
-        #          useUserPackages = true;
-        #          extraSpecialArgs = { inherit inputs; };
-        #          users.kacper = ./hosts/pc/home.nix;
-        #        };
-        #      }
-        #    ];
-        #  };
+        pc = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./machines/pc/configuration.nix
+            home-manager.nixosModules.home-manager
+            nur.modules.nixos.default
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = { inherit inputs; };
+                users.kacper = ./machines/pc/home.nix;
+              };
+            }
+          ];
+        };
         server = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [

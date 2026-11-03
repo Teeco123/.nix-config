@@ -3,7 +3,7 @@ _: {
     ./widgets.nix
   ];
 
-  programs.noctalia-shell.settings.bar = {
+  programs.noctalia.settings.bar = {
     barType = "floating";
     position = "top";
     monitors = [ ];
