@@ -40,43 +40,5 @@
     ];
   };
 
-  services = {
-    xremap = {
-      enable = true;
-      withHypr = true;
-      config.keymap = [
-        {
-          name = "copy, paste, select all";
-          remap = {
-            "Super_L-a" = "Control_L-a";
-            "Super_L-c" = "Control_L-c";
-            "Super_L-v" = "Control_L-v";
-          };
-          application = {
-            not = [ "wezterm" ];
-          };
-        }
-        {
-          name = "close tab firefox";
-          remap = {
-            "Super_L-w" = "Control_L-w";
-          };
-          application = {
-            only = [ "zen" ];
-          };
-        }
-        {
-          name = "copy paste wezterm";
-          remap = {
-            "Super_L-c" = "Control_L-Shift-c";
-            "Super_L-v" = "Control_L-Shift-v";
-          };
-          application = {
-            only = [ "wezterm" ];
-          };
-        }
-      ];
-    };
-  };
   programs.home-manager.enable = true;
 }

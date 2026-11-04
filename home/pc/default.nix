@@ -3,6 +3,7 @@ _: {
     ./hyprland
     ./noctalia-shell
     ./sops
+    ./xremap
     ./zen-browser
   ];
 }

@@ -8,6 +8,8 @@ _: {
       "$mainMod SHIFT, 2, movetoworkspace, 2"
       "$mainMod SHIFT, 3, movetoworkspace, 3"
       "$mainMod, F, fullscreen"
+      "$mainMod CTRL, F, fullscreen"
+      "$mainMod ALT, F, fullscreen"
       "$mainMod, Tab, cyclenext"
       "$mainMod, 1, workspace, 1"
       "$mainMod, 2, workspace, 2"
