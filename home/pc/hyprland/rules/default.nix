@@ -10,11 +10,11 @@ _: {
     layerrule = [
     ];
 
-    windowrulev2 = [
-      "float, title:^(Picture-in-Picture)$"
-      "size 763 429, title:^(Picture-in-Picture)$"
-      "pin, title:^(Picture-in-Picture)$"
-      "keepaspectratio, title:^(Picture-in-Picture)$"
+    windowrule = [
+      "float on, match:title Picture-in-Picture"
+      "size 763 429, match:title Picture-in-Picture"
+      "pin on, match:title Picture-in-Picture"
+      "keep_aspect_ratio on, match:title Picture-in-Picture"
     ];
   };
 }
