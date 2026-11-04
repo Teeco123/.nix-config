@@ -10,11 +10,15 @@ _: {
         "nix-command"
         "flakes"
       ];
-      substituters = [
+      extra-substituters = [
+        "https://noctalia.cachix.org"
         "https://nix-community.cachix.org"
+        "https://zen-browser.cachix.org"
       ];
-      trusted-public-keys = [
+      extra-trusted-public-keys = [
+        "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        "zen-browser.cachix.org-1:z/QLGrEkiBYF/7zoHX1Hpuv0B26QrmbVBSy9yDD2tSs="
       ];
     };
   };
