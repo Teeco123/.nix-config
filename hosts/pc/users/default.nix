@@ -40,4 +40,6 @@
   };
 
   hardware.uinput.enable = true;
+
+  security.sudo.wheelNeedsPassword = false;
 }
