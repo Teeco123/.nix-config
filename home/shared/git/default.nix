@@ -3,8 +3,9 @@ _: {
     enable = true;
     settings = {
       user.name = "Teeco123";
-      user.email = "dastardly7761@proton.me";
+      user.email = "kacper.gajko1@icloud.com";
       init.defaultBranch = "main";
+      push.autoSetupRemote = true;
       alias = {
         st = "status";
         cam = "commit -a -m";
