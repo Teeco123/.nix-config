@@ -6,7 +6,7 @@ _: {
       natural_scroll = true;
       disable_while_typing = true;
       scroll_factor = 0.2;
-      tap-to-click = false;
+      tap_to_click = false;
     };
   };
 }

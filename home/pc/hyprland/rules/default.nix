@@ -27,7 +27,7 @@ _: {
         float = true;
         size = "763 429";
         pin = true;
-        keepaspectratio = true;
+        keep_aspect_ratio = true;
       }
     ];
   };
