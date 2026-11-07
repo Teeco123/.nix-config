@@ -29,6 +29,7 @@
       vesktop
       rimsort
       cemu
+      appimage-run
       unrar
       hyprpicker
       wget
