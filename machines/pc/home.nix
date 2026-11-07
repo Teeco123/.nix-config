@@ -28,6 +28,7 @@
       pwvucontrol
       vesktop
       rimsort
+      cemu
       unrar
       hyprpicker
       wget

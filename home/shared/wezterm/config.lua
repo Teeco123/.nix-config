@@ -9,8 +9,36 @@ return {
     top = 0,
     bottom = 0,
   },
-  font_size = 14,
+  font_size = 18.0,
   enable_tab_bar = false,
-	font = wezterm.font("Mononoki Nerd Font", {weight="Regular", stretch="Normal", style="Normal"}),
+
+  -- Crisp pixel rendering (prevents font smoothing from making lines look thick)
+  freetype_load_target = "Mono",
+  freetype_render_target = "Mono",
+
+  font = wezterm.font_with_fallback({
+    {
+      family = "Tiny5 Mono",
+      weight = "Regular",
+      harfbuzz_features = { "ROND=0", "BLED=0", "JITT=0" },
+    },
+    "Symbols Nerd Font Mono",
+    "Mononoki Nerd Font",
+  }),
+
+  font_rules = {
+    {
+      intensity = "Bold",
+      font = wezterm.font_with_fallback({
+        {
+          family = "Tiny5 Mono",
+          weight = "Regular",
+          harfbuzz_features = { "ROND=0", "BLED=0", "JITT=0" },
+        },
+        "Symbols Nerd Font Mono",
+        "Mononoki Nerd Font",
+      }),
+    },
+  },
   window_background_opacity = 0.6,
 }

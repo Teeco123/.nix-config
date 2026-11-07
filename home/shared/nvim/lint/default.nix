@@ -7,9 +7,6 @@
         nix = [
           "statix"
         ];
-        rust = [
-          "clippy"
-        ];
       };
     };
 

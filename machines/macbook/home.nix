@@ -19,6 +19,7 @@
     homeDirectory = "/Users/kacper";
     packages = with pkgs; [
       swiftformat
+      antigravity-cli
     ];
   };
 
