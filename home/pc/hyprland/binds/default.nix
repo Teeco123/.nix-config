@@ -43,19 +43,25 @@
     {
       _args = [
         (lib.generators.mkLuaInline ''mod .. " + F"'')
-        (lib.generators.mkLuaInline "hl.dsp.window.fullscreen()")
+        (lib.generators.mkLuaInline ''hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" })'')
       ];
     }
     {
       _args = [
         (lib.generators.mkLuaInline ''mod .. " + CONTROL + F"'')
-        (lib.generators.mkLuaInline "hl.dsp.window.fullscreen()")
+        (lib.generators.mkLuaInline ''hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" })'')
       ];
     }
     {
       _args = [
         (lib.generators.mkLuaInline ''mod .. " + ALT + F"'')
-        (lib.generators.mkLuaInline "hl.dsp.window.fullscreen()")
+        (lib.generators.mkLuaInline ''hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" })'')
+      ];
+    }
+    {
+      _args = [
+        "F11"
+        (lib.generators.mkLuaInline ''hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" })'')
       ];
     }
     {
