@@ -1,5 +1,5 @@
 _: {
-  wayland.windowManager.hyprland.settings.monitorv2 = [
+  wayland.windowManager.hyprland.settings.monitor = [
     {
       output = "HDMI-A-1";
       mode = "3840x2160@60";

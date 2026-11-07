@@ -1,6 +1,6 @@
 _: {
-  wayland.windowManager.hyprland.settings.animations = {
-    enabled = "yes, please :)";
+  wayland.windowManager.hyprland.settings.config.animations = {
+    enabled = true;
     bezier = [
       "easeOutQuint, 0.23, 1, 0.32, 1"
       "easeInOutCubic, 0.65, 0.05, 0.36, 1"
@@ -28,5 +28,4 @@ _: {
       "zoomFactor, 1, 7, quick"
     ];
   };
-
 }

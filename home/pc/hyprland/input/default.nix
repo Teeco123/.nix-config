@@ -1,5 +1,5 @@
 _: {
-  wayland.windowManager.hyprland.settings.input = {
+  wayland.windowManager.hyprland.settings.config.input = {
     kb_layout = "us,pl";
     touchpad = {
       clickfinger_behavior = true;

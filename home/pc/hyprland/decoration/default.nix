@@ -1,5 +1,5 @@
 _: {
-  wayland.windowManager.hyprland.settings.decoration = {
+  wayland.windowManager.hyprland.settings.config.decoration = {
     rounding = 10;
     rounding_power = 2;
 

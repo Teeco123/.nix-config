@@ -1,5 +1,5 @@
 _: {
-  wayland.windowManager.hyprland.settings.general = {
+  wayland.windowManager.hyprland.settings.config.general = {
     gaps_in = 0;
     gaps_out = 14;
     border_size = 2;

@@ -1,4 +1,5 @@
-_: {
+{ lib, ... }:
+{
   imports = [
     ./animations
     ./binds
@@ -14,7 +15,7 @@ _: {
 
   wayland.windowManager.hyprland = {
     enable = true;
-    configType = "hyprlang";
+    configType = "lua";
     xwayland.enable = true;
     systemd = {
       enable = true;
@@ -24,14 +25,40 @@ _: {
       no-bind = {
         settings = {
           bind = [
-            "SUPER_R, Delete, submap, reset"
+            {
+              _args = [
+                "SUPER_R + Delete"
+                (lib.generators.mkLuaInline ''hl.dsp.submap("reset")'')
+              ];
+            }
           ];
         };
       };
     };
     settings = {
-      "$mainMod" = "Super_L";
-      "$ns-ipc" = "noctalia-shell ipc call";
+      mod = {
+        _var = "SUPER";
+      };
+      env = [
+        {
+          _args = [
+            "LIBVA_DRIVER_NAME"
+            "nvidia"
+          ];
+        }
+        {
+          _args = [
+            "__GLX_VENDOR_LIBRARY_NAME"
+            "nvidia"
+          ];
+        }
+        {
+          _args = [
+            "NVD_BACKEND"
+            "direct"
+          ];
+        }
+      ];
     };
   };
 }

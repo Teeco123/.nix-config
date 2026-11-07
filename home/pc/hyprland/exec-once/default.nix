@@ -1,7 +1,17 @@
-_: {
-  wayland.windowManager.hyprland.settings.exec-once = [
-    "noctalia-shell"
-    "[workspace 1 silent] zen"
-    "[workspace 2 silent] wezterm"
+{ lib, ... }:
+{
+  wayland.windowManager.hyprland.settings.on = [
+    {
+      _args = [
+        "hyprland.start"
+        (lib.generators.mkLuaInline ''
+          function()
+            hl.exec_cmd("noctalia")
+            hl.exec_cmd("[workspace 1 silent] zen")
+            hl.exec_cmd("[workspace 2 silent] wezterm")
+          end
+        '')
+      ];
+    }
   ];
 }
