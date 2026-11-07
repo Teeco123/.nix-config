@@ -37,7 +37,7 @@
     {
       _args = [
         (lib.generators.mkLuaInline ''mod .. " + M"'')
-        (lib.generators.mkLuaInline "hl.dsp.session.exit()")
+        (lib.generators.mkLuaInline "hl.dsp.exit()")
       ];
     }
     {
@@ -61,45 +61,45 @@
     {
       _args = [
         (lib.generators.mkLuaInline ''mod .. " + Tab"'')
-        (lib.generators.mkLuaInline ''hl.dsp.focus({ direction = "next" })'')
+        (lib.generators.mkLuaInline "hl.dsp.window.cycle_next()")
       ];
     }
     # Workspaces focus
     {
       _args = [
         (lib.generators.mkLuaInline ''mod .. " + 1"'')
-        (lib.generators.mkLuaInline ''hl.dsp.focus({ workspace = "1" })'')
+        (lib.generators.mkLuaInline "hl.dsp.focus({ workspace = 1 })")
       ];
     }
     {
       _args = [
         (lib.generators.mkLuaInline ''mod .. " + 2"'')
-        (lib.generators.mkLuaInline ''hl.dsp.focus({ workspace = "2" })'')
+        (lib.generators.mkLuaInline "hl.dsp.focus({ workspace = 2 })")
       ];
     }
     {
       _args = [
         (lib.generators.mkLuaInline ''mod .. " + 3"'')
-        (lib.generators.mkLuaInline ''hl.dsp.focus({ workspace = "3" })'')
+        (lib.generators.mkLuaInline "hl.dsp.focus({ workspace = 3 })")
       ];
     }
     # Move window to workspace
     {
       _args = [
         (lib.generators.mkLuaInline ''mod .. " + SHIFT + 1"'')
-        (lib.generators.mkLuaInline ''function() hl.dispatch(hl.dsp.window.move({ workspace = "1" })) end'')
+        (lib.generators.mkLuaInline "hl.dsp.window.move({ workspace = 1 })")
       ];
     }
     {
       _args = [
         (lib.generators.mkLuaInline ''mod .. " + SHIFT + 2"'')
-        (lib.generators.mkLuaInline ''function() hl.dispatch(hl.dsp.window.move({ workspace = "2" })) end'')
+        (lib.generators.mkLuaInline "hl.dsp.window.move({ workspace = 2 })")
       ];
     }
     {
       _args = [
         (lib.generators.mkLuaInline ''mod .. " + SHIFT + 3"'')
-        (lib.generators.mkLuaInline ''function() hl.dispatch(hl.dsp.window.move({ workspace = "3" })) end'')
+        (lib.generators.mkLuaInline "hl.dsp.window.move({ workspace = 3 })")
       ];
     }
     # Mouse movements
